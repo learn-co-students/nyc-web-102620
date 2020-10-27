@@ -32,15 +32,32 @@ ___
 
 ### Agenda
 - What is OOP and why?
-- Teach our app what a `User` is (OO & why it matters)
-    - A `User` has a `name` (instance variables)
+     OOP 
+     Instagram - User, Post, Comment, Follow 
+     OSRS - Users, Characters, Items, Quest 
+- What in Ruby are objects? 
+    strings, numbers / integers, arrays, booleans, hashes
+- How do we know?
+    stored data and located somewhere 
+    ruby defined these things as objects that we're using 
+    subclasses of object class 
+    methods!!! 
+    attributes and they have methods we use to interact with them
+- We uses classes to create the blueprint for something 
+
+- Teach our app what a `User` is 
+    - A `User` has a `name` 
     - A `User` has an `age`
     - A `User` has `ss_number`
-    - A `User` can change their `name`, `age`, and `ss_number` (methods)
-    - A `User` should be able to say it's `name` and `age` (macros)
-    - A `User` should not be able to show their `ss_number` (now we show the last 4 digits)
+    - A `User` can change their `name`, `age`, and `ss_number` 
+    - A `User` should be able to say it's `name` and `age` 
+    - A `User` should not be able to show their `ss_number` 
 - A `User` can sign in, view, and edit their personal information
 
+
+## ICEBOX
+- 5.to_i? 
+- Is every instance of a class an object? or are there any types of classes that make things that aren't objects?
 ___ 
 
 ## Lecture 2 :: More OOP
