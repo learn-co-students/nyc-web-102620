@@ -1,5 +1,6 @@
 require 'pry' #goes to rubygems, finds the gem, and gives us access to that code
 require_relative './app/models/user'
+require_relative './app/models/animal'
 
 animals_array = [
     {name: "Flower", species: "turtle", sound: "gurgles"},
@@ -11,28 +12,48 @@ animals_array = [
     {name: "JoJo", species: "cat", sound: "meow"},
     {name: "raffy", species: "dog", sound: "woof"},
     {name: "Stella", species: "dog", sound: "whine"},
-    {name: "Brownie", species: "bunny", sound: "Chomp"}
+    
 ]
 
-def run
-    puts "Please Sign Up to use the ______ App!"
-    puts "What is your name?"
-    name = gets.chomp
-    puts "What is your age?"
-    age = gets.chomp
-    # puts "What is your ssn?"
-    # ssn = gets.chomp
-
-    new_user = User.new(name, age) # makes age a #
-        # create the new user instance with the info
-        # stores that new instance into the new_user variable
-    binding.pry 
+animals_array.each do |animal|
+    Animal.new(animal[:name], animal[:species], animal[:sound])
 end
 
+brownie = Animal.new("Brownie","bunny","Chomp")
+hoppy = Animal.new("hoppy","bunny","Chomp")
+stinky = Animal.new("stinky","cat","meooooowwwww")
 
-aaron = User.new("Aaron", 47, "01234")
-joshua = User.new("Joshua", 47, "01234")
+
+aaron = User.new("Aaron", 47, "NJ", "01234")
+joshua = User.new("Joshua", 47, "GA", "01234")
 sara = User.new("Sara", 47)
+connor = User.new("Connor", 47)
+
+
+
+def run
+    puts "Welcome to The ______ App!"
+    puts "Please select an option"
+    puts "1. Sign Up"
+    puts "2. Log In"
+    choice = gets.chomp
+    if choice == "1"
+        puts "What is your name?"
+        name = gets.chomp
+        puts "What is your age?"
+        age = gets.chomp
+        new_user = User.new(name, age) # makes age a #
+        # create the new user instance with the info
+        # stores that new instance into the new_user variable
+    elsif choice == "2"
+        puts "What's your name?"
+        login_name = gets.chomp
+        found_user = User.all.select { |user| user.name == login_name } # get me an array of all users 
+        # How do we get a user to log in? 
+        binding.pry 
+    end
+end
+
 
 
 

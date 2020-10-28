@@ -29,7 +29,6 @@ ___
 
 ### Questions!
 
-
 ### Agenda
 - What is OOP and why?
      OOP 
@@ -62,27 +61,44 @@ ___
 
 ## Lecture 2 :: More OOP
 
-### General Reflections from Practice Pt 1
-
+### General Reflections from OO Practice Pt 1
+- Used correct attrs!! 🎉
+- Duplicated some of the methods though...
+- Default values 
+- TESTING ✨🎉✨🎉✨🎉✨🎉✨🎉✨🎉✨🎉✨🎉✨🎉✨🎉✨🎉✨🎉
 
 ### Questions!!!
+- I'm confused about self
+- Go over `||=` +1
 
+### Recap
+- Basically everything in Ruby in an object
+- We can access objects using methods
+- Instances are definitely objects `aaron.steal_ssn(sara)`
+- Classes themselves are also objects 
 
 ### Agenda!
-- Class methods
+- Class variables & methods
 - `self`
 - private methods
 
 - A `User` should be able to log in
 - `User.all` should return a list of all user instances 
-- A `User` should be able to introduce themselves
-    - `User#introduce` should return a string that says "Hi, my name is _____"
+- A `User` should be able to view their profile
+    - `User#view_profile` should print the user's information
 - A `User` should be able to keep track of number of profile views
     - `User#views` should return the number of times a user's profile has been viewed
     - Everytime a user's profile is viewed a message should puts to the screen saying "here is your profile"
-- `User.time_for_quince` method which will return a list of users who are 14 years old 
-- Add password & username 
-- Make profiles viewable / not viewable 
+- Additional methods we can think of!! 
+    - `User.find_by_state(state)` returns all users who live in that state
+    - `User.driving_age_users` return an array of all users who are of driving age (16)
+    - `User.drinking_age` return an array of all users who are of driving age (21)
+    - `User.senior_citizens` return an array of all users who are 65+
+- Make the `Animal` class for additional practice?
+- solution branches :) 
+- Caryn will push code and show pulling it down!
+
+
 
 
 ___ 
