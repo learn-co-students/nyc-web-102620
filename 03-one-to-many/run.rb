@@ -1,5 +1,5 @@
 require 'pry'
-require_relative 'models/animal.rb'
+require_relative 'models/pet.rb'
 require_relative 'models/user.rb'
 
 # name, age, bio, home_state
@@ -12,6 +12,6 @@ sara = User.new("Sara", 33, "wOof! 🗣", "ME")
 connor = User.new("Connor", 67, "AlL tHe pEts pLz 🥺")
 
 
-a1 = Animal.new
+a1 = Pet.new
 
 binding.pry
