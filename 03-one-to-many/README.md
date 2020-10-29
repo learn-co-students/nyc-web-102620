@@ -153,6 +153,7 @@ How could we avoid this mess? We could separate each class into its own file and
 ___
 
 ### Deliverables
+##### [User -< Pet](https://docs.google.com/spreadsheets/d/1na1SOMLOqy77ZrWeVVHpVnqaxmHyYstaGfS65N3uQgI/edit?usp=sharing)
 
 * Create a User class. The class should have these methods:
     - `User#initialize` takes a name, bio, & home_state
