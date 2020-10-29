@@ -136,7 +136,7 @@ ____
 
 As we've seen from the prework, we write `require 'pry'` at the top of a file whenever we want to use pry. The keyword `require` allows us to import a gem into our file so that we have access to it.
 
-Let's say we have three files called `user.rb`, `animal.rb`, and `main.rb`. In `main.rb`, we want to have access to the code inside `user.rb`, so we have to write `require_relative user.rb` at the top of the `main.rb` file. If we want to also have access to code inside of `animal.rb`, we would also simply add `require_relative animal.rb` at the top of our `main.rb` file.
+Let's say we have three files called `user.rb`, `pet.rb`, and `main.rb`. In `main.rb`, we want to have access to the code inside `user.rb`, so we have to write `require_relative user.rb` at the top of the `main.rb` file. If we want to also have access to code inside of `pet.rb`, we would also simply add `require_relative pet.rb` at the top of our `main.rb` file.
 
 ## Separation of Concerns
 
@@ -156,21 +156,22 @@ ___
 
 * Create a User class. The class should have these methods:
     - `User#initialize` takes a name, bio, & home_state
-    - `User#name` returns a string for the username. *Should not* be able to change after the user is created
-    - `User#bio` returns a string for the bio. *Should* be able to change after user is created
-    - `User#home_state` returns a string, defaults to `NY` if no state is given. *Should* be able to change after user is created
-    - `User#adopt_animal` takes a name & species, creates a new animal, and adds it to the user's animal collection
-    - `User#animals` returns an array of animal instances
-    - `User#number_of_pets` returns the number of animals a user has
-    - `User#super_user` takes in a state & returns the users who live within that state and have more than 3 pets
-    - `User.print_animals` prints all animals to the screen in a nice format
+    - `User#name` returns a string for the name. name *Should not* be able to change after the user is created
+    - `User#age` returns an integer for the age
+    - `User#bio` returns a string for the bio. bio *Should* be able to change after user is created
+    - `User#home_state` returns a string for the home_state. home_state *Should* be able to change after user is created
+    - `User#adopt_pet` takes a name & species, creates a new pet, and adds it to the user's pet collection
+    - `User#pets` returns an array of pet instances belonging to the user
+    - `User#number_of_pets` returns the number of pets a user has
+    - `User.super_friends` takes in a state & returns the users who live within the specified state and have more than 3 pets
 
-* Create an Animal class. The class should have these methods:
-    - `Animal#name` returns an string. *Should* be able to change after an animal is created
-    - `Animal#species` returns a string. *Should not* be able to change after animal is created
-    - `Animal#user` returns an instance of the user class
-    - `Animal.all` returns all the animals created
-    - `Animal#username` returns the username of the animal's user
+* Create an Pet class. The class should have these methods:
+    - `Pet#name` returns an string. *Should* be able to change after an pet is created
+    - `Pet#species` returns a string. *Should not* be able to change after pet is created
+    - `Pet#user` returns an instance of the user class
+    - `Pet.all` returns all the pets created
+    - `Pet#best_friend_name` returns the name of the pet's owner
+    - `Pet.all_species` prints a unique list of all the represented species
 
 <br>
 <br>
