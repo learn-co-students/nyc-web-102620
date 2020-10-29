@@ -14,6 +14,12 @@
 
 ___
 
+- Questions we talked about after class
+    - self.class.all ?? @@all vs self ? 
+    - when to use conditionals (if statements)
+    - happiness method, less than 10 & greater than 0
+
+
 - Quick Review of OOP
     - we created classes
     - we created instances of classes using `initialize`
@@ -44,9 +50,26 @@ What do the following mean in plain English? How about in programming?
 <pre>Set of possible values within a realm; Domain name - string that defines a realm within the internet (ex. youtube.com, facebook.com)
 
 
-* Youtube -
+* Youtube - videos, users, comments, playlists, likes, advertisements, subscriptions
 
-* Twitter - 
+video has many comments
+a comment belongs to a video
+
+a comment can have many likes
+like belongs to a comment
+
+video belongs to a user
+a user has many videos
+
+* Twitter - tweets, profile, followers, users, pictures, likes, analytucs, retweets, media
+
+user has many tweets
+a tweet belongs to a user
+
+<!-- a user has many followers -->
+
+
+
 
 </pre>
 </details>
