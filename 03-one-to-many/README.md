@@ -1,6 +1,8 @@
 # One To Many Relationships
 
-![alt text](pics/many-animals.jpg "Animals")
+<!-- ![alt text](pics/many-animals.jpg "Animals") -->
+<img src="pics/many-animals.jpg" alt="Animals" height="500px">
+
 
 ## SWBATs:
 1. Implement one object to many objects relationship
@@ -172,7 +174,7 @@ ___
 
 <br>
 <br>
-<img src="pics/doggo.jpeg" alt="Pic taken by yours truly" height="400px">
+<img src="pics/doggo.jpeg" alt="Pic taken by yours truly" height="300px">
 
 ___
 
@@ -213,4 +215,4 @@ ___
 ____
 
 
-<img src="pics/animals.jpg" alt="cute animals!">
+<img src="pics/animals.jpg" alt="cute animals!" height="500px">
