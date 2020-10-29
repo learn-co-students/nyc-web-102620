@@ -131,6 +131,7 @@ Below is a basic overview of the notation used  to describe cardinality in these
 
 In order to draw your ER diagrams, you can draw it out on paper or also using many available online tools. You can even use [this online whiteboard tool](https://awwapp.com/#).
 
+<img src="pics/screenshot.png" alt="diagramming 1 - many relationships" height="300px">
 
 <p>
 <details>
