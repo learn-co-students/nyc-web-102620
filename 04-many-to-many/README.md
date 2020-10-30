@@ -82,7 +82,7 @@ ___
 
 ## Driver -< Ride >- Passenger
 
-#### How can an driver learn about the passengers?
+#### How can a driver learn about the passengers?
     1. For a driver, find all their rides
     2. For those rides, get the passengers' information
 
@@ -91,7 +91,7 @@ In the Passenger -< Ride >- Driver, we have three classes - `Passenger`, `Ride`,
 <!-- <img src="pics/wut.jpeg" alt="drawing" width="400px"/> -->
 [Add screenshot here of spreadsheet here after lecture]
 
-*Driver* has many *Passengers* through *Ride*. *Passenger* has many *Drivers* through *Ride*, too. By examining the attributes of the *Driver* and *Passenger*, we can see that both of them have no direct access to each other without *Ride*. *Ride* knows forms the relationship between the driver and a passenger by by having a reference to an instance of an passenger and a reference to an instance of an driver.
+*Driver* has many *Passengers* through *Ride*. *Passenger* has many *Drivers* through *Ride*, too. By examining the attributes of the *Driver* and *Passenger*, we can see that both of them have no direct access to each other without *Ride*. *Ride* knows forms the relationship between the driver and a passenger by by having a reference to an instance of a passenger and a reference to an instance of a driver.
 
 <img src="pics/Image_from_iOS__1_.jpg" alt="drawing" width="400"/>
 
@@ -151,7 +151,7 @@ __5. For all those Rides of a Driver, get the Passengers__
     ```
 __6. Repeat steps 4 & 5 with the Passenger class__
 
-- For an Passenger, find all their Rides
+- For a Passenger, find all their Rides
     - Passenger#rides
         ```Ruby
         # inside Passenger class
@@ -162,7 +162,7 @@ __6. Repeat steps 4 & 5 with the Passenger class__
             end
         end
         ```
-- For all those rides of an passenger, get the drivers
+- For all those rides of a passenger, get the drivers
     - Passenger#drivers
         ```Ruby
         # inside Passenger class
