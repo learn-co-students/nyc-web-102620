@@ -10,13 +10,14 @@
 4. Demonstrate **Single Source of Truth** by not storing one object in multiple collections
 
 
-<img src="pics/doggo1.jpg" width="400px"/>
+<img src="pics/doggo1.jpg" width="250px"/>
 
 ______
 
 When we think about what entities we want to model in our programs, it's important to think about their relationships to each other. Yesterday, we talked about one to many relationships. 
 
-- One to Many
+<details><summary>One to Many</summary>
+<p>
 
     User -< Tweet
 
@@ -32,9 +33,10 @@ When we think about what entities we want to model in our programs, it's importa
 
     Country -< State -< City
 
-   Ceremony -< Particpant -< Award 
-
-
+    Ceremony -< Particpant -< Award
+</p>
+</details>
+<br><br>
 
 
 & today, let's talk about many to many! If we think about the Uber or Lyft domain, they have passengers and drivers. A driver can have many passengers and a passenger can have many drivers. A driver might not know about their passenger directly. Likewise, a passenger may not directly know about their driver. The way that a driver will know about their passenger is through the ride. When a driver gets a new ride, they will recieve the information about their passenger. Likewise, whenever a passenger books a new ride, they will recieve some information about their driver.
