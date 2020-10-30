@@ -90,8 +90,38 @@ In the Passenger -< Ride >- Driver, we have three classes - `Passenger`, `Ride`,
 
 <!-- <img src="pics/wut.jpeg" alt="drawing" width="400px"/> -->
 [Add screenshot here of spreadsheet here after lecture]
+<!-- https://docs.google.com/spreadsheets/d/1NKuRC1a6nirvdShyzc50px0hMLABWG7MVcoqaF4zZVo/edit?usp=sharing-->
 
 *Driver* has many *Passengers* through *Ride*. *Passenger* has many *Drivers* through *Ride*, too. By examining the attributes of the *Driver* and *Passenger*, we can see that both of them have no direct access to each other without *Ride*. *Ride* knows forms the relationship between the driver and a passenger by by having a reference to an instance of a passenger and a reference to an instance of a driver.
+
+
+<p>
+<details>
+<summary> What are the method/s & attribute/s needed to set up the Ride's relationship to other classes?</summary>
+<p>
+
+</p>
+</details>
+</p>
+
+
+<p>
+<details>
+<summary> What are the method/s & attribute/s needed to set up the Driver's relationship to other classes?</summary>
+<p>
+
+</p>
+</details>
+</p>
+
+<p>
+<details>
+<summary> What are the method/s & attribute/s needed to set up the Passenger's relationship to other classes?</summary>
+<p>
+
+</p>
+</details>
+</p>
 
 <img src="pics/Image_from_iOS__1_.jpg" alt="drawing" width="400"/>
 
@@ -111,13 +141,13 @@ __2. Create Driver Class__
 
 - Implement single source of truth
     - `@@all == []`
-    - Passenger.all method
+    - Driver.all method
 
 __3. Create Ride Class__
 
 - Implement single source of truth
     - `@@all == []`
-    - Passenger.all method
+    - Ride.all method
 - Ride >- Passenger
     - Therefore, Ride needs to have a reference to the Passenger it belongs to
     - We can do this by passing in a Passenger instance to `initialize` when we create a new instance of Ride
