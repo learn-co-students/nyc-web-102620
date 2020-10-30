@@ -61,7 +61,7 @@ The purpose of the class through which the two classes are joined is to store a 
 <p>
 <details>
 <summary> What are some other examples of many to many relationships?</summary>
-<pre>
+<p>
 <ul>
 <li>SocialMediaSite -< Account >- User</li>
 <li>Student -< Enrollment >- Course </li>
@@ -71,7 +71,7 @@ The purpose of the class through which the two classes are joined is to store a 
 <li>NailTechnician -< Appointment >- Customer</li>
 <li>Company -< Purchase >- Client</li>
 </ul>
-</pre>
+</p>
 </details>
 </p>
 
