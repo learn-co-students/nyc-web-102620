@@ -102,9 +102,9 @@ In the Passenger -< Ride >- Driver, we have three classes - `Passenger`, `Ride`,
 <details>
 <summary> What are the method/s and/or attribute/s needed to set up the Ride's relationship to other classes?</summary>
 <p>
-- driver instance variable
-- passenger instance variable
-- @@all
+<li>driver instance variable</li>
+<li>passenger instance variable</li>
+<li> Ride.all, @@all
 </p>
 </details>
 </p>
@@ -114,8 +114,8 @@ In the Passenger -< Ride >- Driver, we have three classes - `Passenger`, `Ride`,
 <details>
 <summary> What are the method/s and/or attribute/s needed to set up the Driver's relationship to other classes?</summary>
 <p>
-- Driver#rides
-- Driver#passengers
+<li>Driver#rides</li>
+<li>Driver#passengers</li>
 </p>
 </details>
 </p>
@@ -124,8 +124,8 @@ In the Passenger -< Ride >- Driver, we have three classes - `Passenger`, `Ride`,
 <details>
 <summary> What are the method/s and/or attribute/s needed to set up the Passenger's relationship to other classes?</summary>
 <p>
-- Passenger#rides
-- Passenger#drivers
+<li>Passenger#rides</li>
+<li>Passenger#drivers</li>
 </p>
 </details>
 </p>
