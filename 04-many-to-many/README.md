@@ -57,6 +57,9 @@ Doctor -< Appointment >- Patient
 
 The purpose of the class through which the two classes are joined is to store a record for each of the combinations of these other two classes. You can think of this class as a place to store information or attributes of the relationships between the two entities.
 
+director -< movie >- actor
+recipe -< recipeIngredient > ingredient
+
 
 <p>
 <details>
@@ -99,7 +102,9 @@ In the Passenger -< Ride >- Driver, we have three classes - `Passenger`, `Ride`,
 <details>
 <summary> What are the method/s and/or attribute/s needed to set up the Ride's relationship to other classes?</summary>
 <p>
-
+- driver instance variable
+- passenger instance variable
+- @@all
 </p>
 </details>
 </p>
@@ -109,7 +114,8 @@ In the Passenger -< Ride >- Driver, we have three classes - `Passenger`, `Ride`,
 <details>
 <summary> What are the method/s and/or attribute/s needed to set up the Driver's relationship to other classes?</summary>
 <p>
-
+- Driver#rides
+- Driver#passengers
 </p>
 </details>
 </p>
@@ -118,7 +124,8 @@ In the Passenger -< Ride >- Driver, we have three classes - `Passenger`, `Ride`,
 <details>
 <summary> What are the method/s and/or attribute/s needed to set up the Passenger's relationship to other classes?</summary>
 <p>
-
+- Passenger#rides
+- Passenger#drivers
 </p>
 </details>
 </p>
