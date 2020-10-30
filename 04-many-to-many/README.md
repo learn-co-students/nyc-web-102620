@@ -97,7 +97,7 @@ In the Passenger -< Ride >- Driver, we have three classes - `Passenger`, `Ride`,
 
 <p>
 <details>
-<summary> What are the method/s & attribute/s needed to set up the Ride's relationship to other classes?</summary>
+<summary> What are the method/s and/or attribute/s needed to set up the Ride's relationship to other classes?</summary>
 <p>
 
 </p>
@@ -107,7 +107,7 @@ In the Passenger -< Ride >- Driver, we have three classes - `Passenger`, `Ride`,
 
 <p>
 <details>
-<summary> What are the method/s & attribute/s needed to set up the Driver's relationship to other classes?</summary>
+<summary> What are the method/s and/or attribute/s needed to set up the Driver's relationship to other classes?</summary>
 <p>
 
 </p>
@@ -116,7 +116,7 @@ In the Passenger -< Ride >- Driver, we have three classes - `Passenger`, `Ride`,
 
 <p>
 <details>
-<summary> What are the method/s & attribute/s needed to set up the Passenger's relationship to other classes?</summary>
+<summary> What are the method/s and/or attribute/s needed to set up the Passenger's relationship to other classes?</summary>
 <p>
 
 </p>
