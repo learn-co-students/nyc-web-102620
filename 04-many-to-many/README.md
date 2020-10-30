@@ -36,7 +36,7 @@ When we think about what entities we want to model in our programs, it's importa
     Ceremony -< Particpant -< Award
 </p>
 </details>
-<br><br>
+<!-- <br><br> -->
 
 
 & today, let's talk about many to many! If we think about the Uber or Lyft domain, they have passengers and drivers. A driver can have many passengers and a passenger can have many drivers. A driver might not know about their passenger directly. Likewise, a passenger may not directly know about their driver. The way that a driver will know about their passenger is through the ride. When a driver gets a new ride, they will recieve the information about their passenger. Likewise, whenever a passenger books a new ride, they will recieve some information about their driver.
