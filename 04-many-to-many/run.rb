@@ -21,12 +21,12 @@ melissa = Driver.new("Melissa", 62, 8)
 thomas = Driver.new("Thomas", 52, 10)
 
 # pickup, destination, driver, passenger
-r1 = Ride.new("middle of nowhere", "over there", anber, michelle)
-r2 = Ride.new()
-r3 = Ride.new()
-r4 = Ride.new()
-r5 = Ride.new()
-r6 = Ride.new()
+r1 = Ride.new("middle of nowhere", "over there", michelle, anber)
+r2 = Ride.new("Brooklyn","Manhattan", ben, shannon)
+r3 = Ride.new("earth", "mars", adam, ekene)
+r4 = Ride.new("mars","funkytown", thomas, ekene)
+r5 = Ride.new("paris","berlin", melissa, kelsea)
+r6 = Ride.new("ny","tokyo", michelle, jc)
 
 
 

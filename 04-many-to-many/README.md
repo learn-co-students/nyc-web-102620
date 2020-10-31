@@ -91,8 +91,7 @@ ___
 
 In the Passenger -< Ride >- Driver, we have three classes - `Passenger`, `Ride`, `Driver`. Take a look at the image below. It's a [google sheet](sheets.new) with information about our classes. This is another way to visualize our classes and their attributes. It's also going to help us prepare for learning about databases next week. We display each entity in our domain (passenger, driver, ride). We show how each  entity has certain attributes. For example, our *passenger* object has an *object_id*, *first_name*, *last_name*, and *age*. Each row is an instance of a class. Each object's *object_id* is an attribute that will allow us to uniquely identify an instance. If we are a large corporation with 3,000 drivers and 5 of our drivers are named "Jane Doe", we would easily be able to tell them apart in our code using their unique identifier, *object_id*.
 
-<!-- <img src="pics/wut.jpeg" alt="drawing" width="400px"/> -->
-[Add screenshot here of spreadsheet here after lecture]
+<img src="pics/ss.png" alt="drawing" width="400px"/>
 <!-- https://docs.google.com/spreadsheets/d/1NKuRC1a6nirvdShyzc50px0hMLABWG7MVcoqaF4zZVo/edit?usp=sharing-->
 
 *Driver* has many *Passengers* through *Ride*. *Passenger* has many *Drivers* through *Ride*, too. By examining the attributes of the *Driver* and *Passenger*, we can see that both of them have no direct access to each other without *Ride*. *Ride* knows forms the relationship between the driver and a passenger by by having a reference to an instance of a passenger and a reference to an instance of a driver.
