@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+begin
+  name = ARGV.first
+  abort if !name
+
+  File.write("bin/config", name)
+
+  # puts "Opening code-challenge.bundle"
+  system("git clone code-challenge.bundle")
+
+  # puts "Checking out branch \"#{name}\""
+  system("cd code-challenge && git checkout -b #{name}")
+
+  # puts "Creating initial commit"
+  system("cd code-challenge && git commit --allow-empty -m \"Initial commit\"")
+
+  puts "Removing code-challenge.bundle"
+  system("rm code-challenge.bundle")
+rescue SystemExit
+  puts "File must be run as `ruby bin/start <your-name>`"
+end

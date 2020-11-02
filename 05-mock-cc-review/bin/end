@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+begin
+  name = File.read("bin/config")
+  abort if !name
+
+  # puts "Creating final commit"
+  system("cd code-challenge && git add . && git commit --allow-empty -m \"Final commit\"")
+
+  # puts "Opening code-challenge.bundle"
+  system("cd code-challenge && git bundle create ../#{name}.bundle HEAD #{name}")
+rescue SystemExit
+  puts "File must be run as `ruby bin/end <your-name>`"
+end
