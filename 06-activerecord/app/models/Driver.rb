@@ -1,4 +1,13 @@
 class Driver < ActiveRecord::Base
+    has_many :rides # always plural!!! 
+    has_many :passengers, through: :rides
+
+    def average_distance
+        # self 
+        # count
+        # sum or map
+        self.rides.sum { |r| r.distance } / self.rides.count
+    end
 
     # CRUD
 

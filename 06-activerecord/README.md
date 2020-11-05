@@ -8,7 +8,53 @@ Intro to ActiveRecord
 - [ ] Practice creating migrations for updating the database structure
 - [ ] Practice with `ActiveRecord::Base` instance and class methods
 - [ ] Perform persistent CRUD actions on one model using ActiveRecord
+- [ ] Practice creating models and migrations for model relationships
+- [ ] Practice using AR macro's 
+- [ ] Identify what methods AR writes and which the developers (us) need to write
 
+
+## Questions
+1. What are the steps for setting up ActiveRecord on a model? (without looking at notes!)
+   Make sure your domain model works for your use cases
+   Create a model (< ActiveRecord::Base)
+   Create the migration
+   Run the migration 
+   Check schema
+   Create some seeds 
+   Test!!!!!!!!!
+2. What things we had to write in OOP that we *do not* write in AR?
+  attrs
+  @@all
+  Class.all 
+  initialize
+  ... all the methods that AR creates for us! 
+3. What are some of the conventions in AR? 
+  must migrate always!!!! ( migration file naming conventions )
+  tables are plural 
+  models are singular
+  if you want to alter a migration file... you've gotta rollback (or drop), make the updates, migrate again
+  models need to inherit from AR::Base
+  don't change anything in schema directly 
+  file structure
+    db > migrate > migration files
+    db > seeds.rb
+  As opposed to oop (just .new) we need ( .new + .save ) or ( .create ) 
+  Josh ==> how do we tell models who they belong to? ==> macros!!!!
+
+
+## Practice goals
+- Add columns cost (float) and distance (float) to ride
+- 
+
+## Process starting from scratch (say... for ze project?)
+1. Write out your domain & be sure about it 
+** 
+2. Create all model files & set up AR relationship macros
+3. Create your migrations (one by one) rake db:create_migration for one, fill it out, run it, check schema
+    then move on to the next one 
+**
+4. Create some seeds and run rake db:seed
+5. TEST in rake console 
 
 ____
 
@@ -22,6 +68,8 @@ ____
 * Review seeding
 * Talk about pluralization/singularization
 * Set up ActiveRecord on second model
+* Set up ActiveRecord on third model with relationships!
+* macros for relationships in AR 
 
 * To complete on your own or with a partner:
   - Set up ActiveRecord another model
