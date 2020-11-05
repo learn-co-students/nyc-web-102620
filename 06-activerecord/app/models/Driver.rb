@@ -1,6 +1,6 @@
 class Driver < ActiveRecord::Base
 
-    # CRUD !
+    # CRUD
 
     # CREATE
     # Driver.new -> create Ruby instance
@@ -15,6 +15,9 @@ class Driver < ActiveRecord::Base
     # Driver.find(id) -> get the instance with the specified id
     # Driver.find_by({}) -> get instance with the specified attributes
     # Driver.where() -> get an array of instances who meet a certain criteria
+        # ex we used where:
+            # Driver.where(age: 100)
+            # Driver.where("age > ?", 15)
 
 
 
