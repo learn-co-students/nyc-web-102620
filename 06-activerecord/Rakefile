@@ -10,3 +10,7 @@ task :console do
 end
 
 
+desc "Print out lots of emojis"
+task :print_emojis do
+  puts "🏄‍♀️🏌️‍♀️🤾🧘‍♀️🏋️‍♀️" * 5000
+end
