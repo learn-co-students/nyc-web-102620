@@ -53,7 +53,7 @@ Developers working in teams are continually writing new code and changing existi
 
 ## Overview of Centralized vs Distributed Version Control Systems
 
-<img src="pics/VCS_Diff.png" width="200">
+<img src="pics/VCS_Diff.png">
 
 In a centralized version control system (Subversion, Clearcase, Perforce, etc), you have a database on one server or system. That's where the project resides. You can download a snapshot of part of the latest of the project. You pull the files that you need, but you never have a full copy of your project locally. You can then start working on that project and check in incremental changes of some sort to the codebase on the server. You have to operate through that central server, though, so if the network is down, you will not be able to check in their code. The entire database lives on that central server, so if you lose that central server and don't have a back up of it, then that project is gone! A few people who checked out snapshots may have some of the later snapshots of the project, but that's it.
 
