@@ -28,7 +28,7 @@
 ----
 
 ##### Git demo repository that was used in lecture:
-- Link tbd
+- https://github.com/BrendaMichelle/cuddly-telegram
 
 ##### Git Jokes - git with it 🤷‍♀️
 - https://github.com/EugeneKay/git-jokes/blob/lulz/Jokes.txt
