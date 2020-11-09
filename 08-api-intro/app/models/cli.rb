@@ -76,6 +76,9 @@ class CLI
     end
 
     def get_category_data(category)
+        # binding.pry
+        resp = RestClient.get("http://jservice.io/api/category?id=#{category.api_id}")
+        JSON.parse(resp)
         # AI: send a request to the API for clues from the correct category, passed in as an argument
     end
 
