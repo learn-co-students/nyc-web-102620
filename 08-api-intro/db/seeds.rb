@@ -1,6 +1,4 @@
 require 'pry'
-require 'rest-client'
-require 'json'
 
 Category.destroy_all
 User.destroy_all
