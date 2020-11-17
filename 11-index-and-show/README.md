@@ -6,10 +6,13 @@
 - Explain how routes in Rails interact with the controller (map to CRUD actions)
 - Use ActionView helpers like `link_to`, `button_to` and `form_for` to help write HTML
 - params params PARAMS!
+- MVC
 
 
 App Idea
 ---
+Outer Space
+Planets -< Trips >- Aliens
 
 
 ## Outline
@@ -18,6 +21,7 @@ App Idea
   - [] Read
     - [] Views -> Index, Show, New, Edit 
     - [] Review `link_to` and path helpers
+    <!-- --------------------- -->
   - [] Create
     - [] HTML form vs `form_tag` vs `form_for`
     - [] Strong Params
