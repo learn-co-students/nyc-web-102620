@@ -1,0 +1,10 @@
+<h1>Planet Index Page</h1>
+
+<% @planets.each do |planet| %>
+  <p> <%= link_to planet.name, "planets/#{planet.id}" %> </p>
+<% end  %>
+
+
+<a href="/planets/1">Planet # 1</a>
+
+
