@@ -1,0 +1,8 @@
+<h1>Planet Show Page</h1>
+
+<h4><%= @planet.name %></h4>
+<p>Size in numbers: <%= @planet.size %></p>
+
+
+                                <%# delete /planets/:id %>
+<%= button_to "Death Star Attack", planet_path(@planet), method: :delete  %>
