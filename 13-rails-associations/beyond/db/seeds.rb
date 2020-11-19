@@ -8,7 +8,9 @@
 
 puts "Destroying your planetz!! 🪐"
 
+Trip.destroy_all
 Planet.destroy_all
+Alien.destroy_all
 
 puts "Creating your planetz!! 🌍"
 
@@ -17,3 +19,15 @@ Planet.create!(name: "Mars", size: 750)
 Planet.create!(name: "Dagobah", size: 2000)
 Planet.create!(name: "Tatoine", size: 1500)
 Planet.create!(name: "Coruscant", size: 5000)
+
+
+
+20.times do 
+  Alien.create(name: Faker::Games::WorldOfWarcraft.hero, user_name: Faker::Internet.username, age: rand(0..1000), abduction_count: rand(10..1000), color: Faker::Color.color_name)
+end 
+
+reasons = ["buisness", "pleasure", "abducting"]
+
+60.times do 
+  Trip.create(planet_id: Planet.all.sample.id, alien_id: Alien.all.sample.id, length: rand(1..100), reason: reasons.sample )
+end 

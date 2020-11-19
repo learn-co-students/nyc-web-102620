@@ -3,6 +3,7 @@
 
 <!-- .build -->
 <!-- custom setter / getter methods -->
+<!-- Clean Up Controller && Views -->
 
 ## SWBATs
 - Set up ActiveRecord associations on models in Rails
@@ -21,8 +22,8 @@ Planets -< Trips >- Aliens
 - [] Finish CRUD (Update & delete)
 - [] Clean Up Controller && Views
 ---------------------------------------------
-- [ ] Add an additional model to our domain
-  - [ ] Create relationship using ActiveRecord
+- [X] Add an additional model to our domain
+  - [X] Create relationship using ActiveRecord
   - [ ] Use information from the association in our views
   - [ ] Make a create form for the new model with a dropdown
   - [ ] Update our delete method from the first model
