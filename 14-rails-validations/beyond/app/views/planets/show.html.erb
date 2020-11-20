@@ -1,0 +1,18 @@
+<h1>Planet Show Page</h1>
+
+<h4><%= @planet.name %></h4>
+<p>Size in numbers: <%= @planet.size %></p>
+
+
+                                <%# delete /planets/:id %>
+<%= button_to "Death Star Attack", planet_path(@planet), method: :delete  %>
+
+<h3>List Of Visitors</h3>
+
+<% @planet.trips.each do |trip| %>
+  <p><%= trip.alien.name %></p>
+  <p> <b># of Days:</b> <%= trip.length %></p>
+  <p> <b>Purpose of Visit:</b> <%= trip.reason %></p>
+  <hr>
+<% end %>
+

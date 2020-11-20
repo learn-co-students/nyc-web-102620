@@ -1,0 +1,29 @@
+<h1>Create a New Planet 🪐</h1>
+
+<%= form_for @planet do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :size %>
+  <%= f.number_field :size %>
+  <br>
+  <br>
+  <%= f.submit %>
+<% end %>
+
+
+
+
+
+<!-- <form action="/planets" method="post">
+  <label for="name">Name</label>
+  <input id="name" type="text" name="name">
+  <br>
+  <br>
+  <label for="size">Size</label>
+  <input id="size" type="number" name="size">
+  <br>
+  <br>
+  <input type="submit" value="Create a New Planet">
+</form> -->
