@@ -1,5 +1,13 @@
 <h1>Create a New Planet 🪐</h1>
 
+<% if flash[:my_errors] %>
+  <ul>
+    <% flash[:my_errors].each do |error| %>
+      <li><%= error %></li>
+    <% end%>
+  </ul>
+<% end%>
+
 <%= form_for @planet do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>

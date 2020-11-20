@@ -12,9 +12,23 @@ class PlanetsController < ApplicationController
   end
 
   def create
-    @planet = Planet.create!(planet_params)
+    planet = Planet.create(planet_params)
 
-    redirect_to planet_path(@planet)
+    # if planet is valid
+      # then redirect to planet path
+    # else if planet is not valid
+      # then go back to the new page
+      # display the error
+
+    if planet.valid?
+      redirect_to planet_path(planet)
+    else
+      # display error
+      flash[:my_errors] = planet.errors.full_messages
+      redirect_to new_planet_path
+    end
+    
+    
   end
   
   def show 
