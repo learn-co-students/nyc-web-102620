@@ -1,0 +1,11 @@
+<%= form_for @planet do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :size %>
+  <%= f.number_field :size %>
+  <br>
+  <br>
+  <%= f.submit %>
+<% end %>

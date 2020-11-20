@@ -1,0 +1,23 @@
+<h1>Go on a Trip</h1>
+
+<%= form_for @trip do |f| %>
+  <%= f.label :reason %>
+  <%= f.collection_select :reason, ["pleasure", 'buisness'], :itself, :itself %>
+
+  <%= f.label :length %>
+  <%= f.number_field :length %>
+
+  <%= f.label :alien_id %>
+  <%= f.text_field :alien_name   %>
+
+  <%= f.label :alien_id %>
+  <%= f.collection_select :alien_id, @aliens, :id, :name   %>
+
+
+  <%= f.label :planet_id %>
+  <%= f.collection_select :planet_id, @planets, :id, :name %>
+  
+
+  <%= f.submit %>
+<% end %>
+
