@@ -1,0 +1,25 @@
+<h1>Signup for an activity!!</h1>
+
+<% if flash[:signup_errors] %>
+  <ul>
+    <% flash[:signup_errors].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @signup do |f| %>
+  <%= f.label :time  %>
+  <%= f.number_field :time %>
+  <br>
+  <br>
+  <%= f.label :camper %>
+  <%= f.collection_select :camper_id, Camper.all, :id, :name, prompt: true %>
+  <br>
+  <br>
+  <%= f.label :activity %>
+  <%= f.collection_select :activity_id, Activity.all, :id, :name, prompt: true %>
+  <br>
+  <br>
+  <%= f.submit %>
+<% end %>
