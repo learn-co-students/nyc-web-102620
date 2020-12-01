@@ -1,0 +1,12 @@
+<div class='index-container'>
+  <% @planets.each do |planet| %>
+    <div class='index-tile'>
+      <h3><%= link_to planet.name, planet_path(planet) %></h3>
+      <%= image_tag planet.img_url, class: 'index-img' %>
+    </div>
+  <% end  %>
+</div>
+
+
+
+

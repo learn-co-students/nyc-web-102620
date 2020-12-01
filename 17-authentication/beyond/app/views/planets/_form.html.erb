@@ -1,0 +1,13 @@
+<%= form_for @planet do |f| %>
+  <div class="form-input">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="form-input">
+    <%= f.label :galaxy %>
+    <%= f.text_field :galaxy %>
+  </div>
+
+  <%= f.submit class: "form-btn" %>
+<% end %>

@@ -1,0 +1,31 @@
+
+<% if flash[:my_errors] %>
+  <ul>
+    <% flash[:my_errors].each do |error| %>
+      <li><%= error %></li>
+    <% end%>
+  </ul>
+<% end%>
+
+
+<div class='form-container'>
+  <h1>Create a Planet 🌎</h1>
+  
+  <%= render 'form' %>
+</div>
+
+
+
+
+
+<!-- <form action="/planets" method="post">
+  <label for="name">Name</label>
+  <input id="name" type="text" name="name">
+  <br>
+  <br>
+  <label for="size">Size</label>
+  <input id="size" type="number" name="size">
+  <br>
+  <br>
+  <input type="submit" value="Create a New Planet">
+</form> -->
