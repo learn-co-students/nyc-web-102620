@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ body {
+   background-image: url("https://i.pinimg.com/originals/2c/37/53/2c37538ad1d9a09852c9ec8638c5fa8b.png");
+   /* max-width: 100%; */
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+
+ .index-container {
+  max-height: 100vh;
+  overflow: scroll;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: rgba(255,255,255,0.4);
+  padding: 0px 10px 0px 10px;
+  margin: 0px auto;
+  border-radius: 25px; 
+  justify-content: space-evenly;
+}
+
+.index-tile {
+  background-color: rgba(0,0,0,0.3);
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 25px; 
+}
+
+.index-img {
+  max-width: 150px;
+}
+.show-img {
+  max-width: 250px;
+}
+
+.index-tile a {
+  text-decoration: none;
+}
+
+
+.show-container {
+  background-color: rgba(255,255,255,0.4);
+  padding: 10px;
+  border-radius: 25px;
+  
+}

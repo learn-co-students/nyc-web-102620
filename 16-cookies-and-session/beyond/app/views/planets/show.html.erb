@@ -1,0 +1,32 @@
+<div class='show-container'>
+
+  <% if cookies[:view_count].to_i <= 3 %>
+  
+    <h1 style="color:green;">You have <%= 3 - cookies[:view_count].to_i  %> views left</h1>
+
+    <h4><%= @planet.name %></h4>
+    <p>Size in numbers: <%= @planet.galaxy %></p>
+    <%= image_tag @planet.img_url, class: "show-img" %>
+
+
+                                    <%# delete /planets/:id %>
+    <%= button_to "Death Star Attack", planet_path(@planet), method: :delete  %>
+
+    <h3>List Of Visitors</h3>
+
+    <% @planet.trips.each do |trip| %>
+      <p><%= trip.alien.name %></p>
+      <p> <b># of Days:</b> <%= trip.length %></p>
+      <p> <b>Purpose of Visit:</b> <%= trip.reason %></p>
+      <hr>
+    <% end %>
+
+  <% else %>
+    <h1>Some Ad</h1>
+    <iframe width="600" height="300" src="https://www.youtube.com/embed/eZgD89VYkVc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+       <%= button_to "I super promise I watched this ad", reset_count_path, method: :delete %>
+  <% end %>                                     
+</div>
+
+

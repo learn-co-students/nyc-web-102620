@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  user_name: MyString
+  age: 1
+  color: MyString
+  abduction_count: 1
+
+two:
+  name: MyString
+  user_name: MyString
+  age: 1
+  color: MyString
+  abduction_count: 1
