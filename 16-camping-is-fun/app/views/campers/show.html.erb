@@ -1,0 +1,12 @@
+<h1><%= @camper.name %></h1>
+
+<%= button_to "Destroy #{@camper.name} ☠️", camper_path(@camper), method: :delete %>
+
+<h3>Age: <%= @camper.age %></h3>
+
+<h3>Activities:</h3>
+<ul>
+  <% @camper.activities.each do |activity| %>
+    <li><%= activity.name %></li>
+  <% end %>
+</ul>
