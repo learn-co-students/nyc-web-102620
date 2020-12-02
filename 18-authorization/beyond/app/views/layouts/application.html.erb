@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Beyond</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div class="banner">
+      <%# image_tag "cats_tinder.gif", class: "banner-img" %>
+      <h1 id="banner-header">...BEYOND</h1>
+    </div>
+
+    <ul class="nav">
+      <li><%= link_to "Planets", planets_path %></li>
+      <li><%= link_to "Create A Planet", new_planet_path %></li>
+      <li><%= link_to "Take a Trip", new_trip_path %></li>
+
+      <% if @current_alien %>
+        <li class="right"><%= link_to "logout", logout_path, method: :delete  %></li>
+        <li class="right">Welcome <%= @current_alien.name %></li>
+      <% else %>
+        <li class="right"><%= link_to "Sign Up", new_alien_path %></li>
+        <li class="right"><%= link_to "Login", new_login_path %></li>
+      <% end %>
+    </ul>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+
+<div class="form-container">
+  <h1>Go on a Trip</h1>
+  <%= form_for @trip do |f| %>
+    <div class='form-input'>
+      <%= f.label :reason %>
+      <%= f.text_field :reason %>
+    </div>
+
+    <div class='form-input'>
+      <%= f.label :length %>
+      <%= f.number_field :length %>
+    </div>
+
+    <div class='form-input'>
+      <%= f.label :planet_id %>
+      <%= f.collection_select :planet_id, @planets, :id, :name %>
+    </div>
+    
+
+    <%= f.submit class: "form-btn"%>
+  <% end %>
+</div>
+

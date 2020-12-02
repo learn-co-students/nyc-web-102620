@@ -1,0 +1,12 @@
+<div class='index-container'>
+  <% if flash[:error] %>
+    <p><%= flash[:error] %></p>
+  <% end %>
+
+  <% @aliens.each do |alien| %>
+    <div class='index-tile'>
+      <p><%= link_to alien.name, alien_path(alien) %></p>
+      <%= image_tag alien.img_url, class: 'index-img' %>
+    </div>
+  <% end  %>
+</div>

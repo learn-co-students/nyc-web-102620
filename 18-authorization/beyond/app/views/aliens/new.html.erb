@@ -1,0 +1,45 @@
+
+
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end%>
+  </ul>
+<% end%>
+
+<div class="form-container">
+  <h1>Create an Account 👽</h1>
+
+  <%= form_for @alien do |f| %>
+    <div class="form-input">
+      <%= f.label :name  %>
+      <%= f.text_field :name  %>
+    </div>
+
+    <div class="form-input">
+      <%= f.label :user_name  %>
+      <%= f.text_field :user_name  %>
+    </div>
+
+    <div class="form-input">
+      <%= f.label :password  %>
+      <%= f.text_field :password  %>
+    </div>
+
+    <div class="form-input">
+      <%= f.label :age  %>
+      <%= f.number_field :age  %>
+    </div>
+
+    <div class="form-input">
+      <%= f.label :abduction_count  %>
+      <%= f.number_field :abduction_count  %>
+    </div>
+
+    <%= f.hidden_field :img_url, value: "https://robohash.org/#{Faker::Hipster.word}.png/?set=set2" %>
+
+    <%= f.submit class: "form-btn"%>
+    
+  <% end %>
+</div>
