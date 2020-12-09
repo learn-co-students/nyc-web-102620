@@ -37,8 +37,6 @@ __________
   * The standard is updated yearly and the standard for that year is called ECMAScript 20xx (or ES 20xx); ES2015 or ES6.
   * We can use transpiling to write JavaScript according to the standard we want and convert it to code that can be used for the majority of JavaScript applications (more on this in mod4)
 
-![Netscape Navigator](https://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/netscape-hero.jpg?itok=AdVWGuMc&resize=1100x1100)
-
 __________
 
 ### Review Request-Response Cycle
