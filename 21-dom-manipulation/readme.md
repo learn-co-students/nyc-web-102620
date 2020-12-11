@@ -19,7 +19,7 @@ _____
 
 #### TO DO:
 - [ ] Talk about what the DOM is and do some drawing
-- [ ] Why isn't my Javascript loading??
+- [ ] Why isn't my Javascript loading correctly??
   - script tag & defer
 
 READ
