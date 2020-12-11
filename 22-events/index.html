@@ -14,7 +14,7 @@
    <!-- CSS -->
    <link rel="stylesheet" href="style.css">
    <!-- Javascript-->
-   <script src="index.js"></script>
+   <script src="index.js" defer></script>
 </head>
 
 <body>
@@ -38,14 +38,16 @@
             <h4 class="description">I'm coming for you bug!!!</h4>
          </div>
       </div>
+      <h2>Create New Meme</h2>
 
-      <form>
+      <form id="newMemeForm" >
          <label for="picture">Meme URL</label>
          <input type="text" id="picture" name="meme" />
-         <label for="description">Meme URL</label>
+         <label for="description">Meme Description</label>
          <textarea id="description" name="description"></textarea>
          <input type="submit" value="Create New Meme!" />
       </form>
+
    </main>
 </body>
 
