@@ -2,13 +2,33 @@
 // https://developer.mozilla.org/en-US/
 // https://www.w3schools.com/cssref/css_selectors.asp 
 
-// Read
+// READ
+let menu = document.querySelector("#menu")
+let firstPost = document.querySelector(".post")
+let allPosts = document.querySelectorAll(".post")
 
-// Update
+// UPDATE
+// step 1: find the element
+let h4ToUpdate = firstPost.querySelector("h4")
+// step 1: update it!
+h4ToUpdate.textContent = "I neeed more sleep"
 
-// Delete
+let title = menu.querySelector(".logo")
+title.style.color = "white"
 
-// Create
+// DELETE
+// step 1: find the element
+let raffysMeanComment = document.querySelector('h2')
+// step 2: remove it from the DOM!
+raffysMeanComment.remove()
+
+// CREATE  
+/*
+document.createElement()
+append -> can take 1 or many arguments, adds elements to end of children list
+prepend -> can take 1 or many arguments, adds elements to beginning of children list
+appendChild -> only takes one argument
+*/
 let postsArray = [
     {
         meme: 'pics/dino.jpeg',
@@ -32,67 +52,70 @@ let postsArray = [
     }
 ]
 
+/*********** TECHNIQUE 1 - hand crafted elements; artisinal ***********/
+/*
+Pros - does not re-parse and re-create anything, computationally
+faster in most cases, we have a reference to all the elements we create
+Cons - many find this to be tedious, have to be more
+thoughtful about the relationships between elements
+*/
+postsArray.forEach(function (postObj) {
+// 1. Create elements that I want to add to page
+let div = document.createElement('div')
+let imageDiv = document.createElement('div')
+let img = document.createElement('img')
+let newH4 = document.createElement('h4')
+
+// 2. Add the attributes and properties that we want the elements to have
+div.classList.add("post")
+imageDiv.classList.add("image")
+newH4.classList.add("description")
+newH4.textContent = postObj.description
+img.src = postObj.meme
+
+// 3. Find where on the page we want to append these elements to, and add them in the appropriate order
+let listings = document.querySelector("#listings")
+imageDiv.append(img)
+div.append(imageDiv, newH4)
+listings.append(div)
+
+})
+
+/*********** TECHNIQUE 2 - innerHtml ***********/
+/*
+Pros - quick for us as developers to write out
+Cons - security considerations, corrupts existing elements,
+it reparses the elements it's being used on (computationally expensive), if we wanted
+a reference to any element in the HTML we added then we still need to querySelect it
+*/
+// let listings = document.querySelector("#listings")
+// postsArray.forEach(function (postObj) {
+//     // 1. find the element where I want to add the divs to
+//     listings.innerHTML += `
+//     <div class="post">
+//         <div class="image">
+//                <img src="${postObj.meme}">
+//         </div>
+//         <h4 class="description">${postObj.description}</h4>
+//     </div> `
+// })
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// TODO Create post for each object in this array
-
-const listingsArray = [
-    {
-        imageLocation: "pics/bugfix.jpeg",
-        title: "Fixing Bugs",
-        price: "$29.99",
-        description: "We all come to know this moment",
-        rating: 3.01
-    },
-    {
-        imageLocation: "pics/charAndString.jpeg",
-        title: "Kindness",
-        price: "$19.99",
-        description: "A reminder that we can all be kind",
-        rating: 5.0
-    },
-    {
-        imageLocation: "pics/dino.jpeg",
-        title: "Dinosaur Evolution",
-        price: "$79.99",
-        description: "Beautiful piece showing evolution",
-        rating: 4.72
-    },
-    {
-        imageLocation: "pics/documentation.png",
-        title: "Updating Docs",
-        price: "$30.00",
-        description: "Never forget to update your documentation",
-        rating: 3.51
-    },
-    {
-        imageLocation: "pics/elvish.jpeg",
-        title: "What's this? LOTR",
-        price: "$99.99",
-        description: "For that LOTR & programming lover in your life",
-        rating: 4.51
-    }
-]
+/*********** TECHNIQUE 3 - insertAdjacentHTML ***********/
+/*
+Pros - quick for us as developers to write out, doesn't reparse
+the element it's being used on
+Cons - security considerations, if we wanted
+a reference to any element in the HTML we added then we still need to querySelect it
+*/
+// postsArray.forEach(function (postObj) {
+//     // 1. find the element where I want to add the divs to and string interpolate wherever I need to
+//     listings.insertAdjacentHTML('beforeend', `
+//     <div class="post">
+//         <div class="image">
+//                <img src="${postObj.meme}">
+//         </div>
+//         <h4 class="description">${postObj.description}</h4>
+//     </div> `)
+// })
