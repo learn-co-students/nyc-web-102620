@@ -1,0 +1,43 @@
+* {
+    font-family: monospace;
+    margin: 1rem;
+}
+
+img {
+    height: 300px;
+}
+
+h4, ul {
+    margin-left: 5em;
+}
+
+li img {
+    height: 150px;
+}
+
+li a {
+    display: block;
+}
+
+#profile {
+    margin-left: auto;
+    margin-right: auto;
+    width: 21em;
+}
+
+#header {
+    text-align: center;
+}
+
+#new-animal-sighting-form input {
+    display: block;
+}
+
+#new-animal-sighting-form label {
+    margin-top: 20px;
+    display: block;
+}
+
+#new-animal-sighting-form input[type="submit"] {
+    margin-top: 20px;
+}

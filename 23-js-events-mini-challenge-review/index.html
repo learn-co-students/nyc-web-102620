@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="data.js"></script>
+    <script src="index.js" defer></script>
+
+    <title>Travel</title>
+</head>
+
+<body>
+    <h1 id="header"> Amazon Trip</h1>
+    <div class="traveler">
+        <div id="profile">
+            <img src="https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg"
+                alt="{traveler name}">
+            <h2>{traveler Name}</h2>
+            <em>{traveler Nickname}</em>
+            <p class="likes">{Traveler Likes} Likes</p>
+            <button class="like-button">❤️</button>
+        </div>
+        <h4>Great Animal Sightings</h4>
+        <ul id="animals">
+            <!-- add an <li> for each animal sighting here -->
+        </ul>
+    </div>
+    <hr>
+    <form id="new-animal-sighting-form">
+        <h4>Add New Animal Sighting Post</h4>
+        <label for="link">Species: </label>
+        <input type="text" name="species" id="animal-species">
+
+        <label for="link">Video Link: </label>
+        <input type="text" name="link" id="animal-link">
+
+        <label for="link">Photo Link: </label>
+        <input type="text" name="photo" id="animal-photo">
+
+        <label for="description">Description: </label>
+        <textarea name="description" id="sighting-description"></textarea>
+
+        <input type="submit" value="Add Animal Sighting" />
+    </form>
+</body>
+
+</html>
