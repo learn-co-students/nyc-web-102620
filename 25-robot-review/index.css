@@ -1,0 +1,98 @@
+body {
+  font-family: 'Press Start 2P';
+  background: rgb(2,162,152);
+  background: linear-gradient(90deg, rgb(25, 216, 204) 0%, rgba(33,246,233,1) 100%);
+}
+
+main {
+  margin: 0 auto;
+  padding: 2rem;
+  width: 80vw;
+  max-width: 70vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 2px 2px 7px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 7px -1px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 7px -1px rgba(0,0,0,0.75);
+}
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tile {
+  background-color: lightgray;
+  flex-basis: calc(10% - 2px);
+  margin: 1px;
+}
+
+.tile:after {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.tile.goal, .tile.robot {
+  background-color: rgb(254, 247, 177);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tile.goal {
+  background-image: url("https://www.iconninja.com/files/218/604/841/star-retro-icon.png");
+  background-size: 70%;
+}
+
+.tile.robot {
+  background-image: url("https://cdn2.iconfinder.com/data/icons/cute-robot-3/512/937-23-128.png");
+  background-size: 90%;
+}
+
+.tile.goal.robot {
+  background-color: rgb(255, 234, 0);
+}
+
+#control-panel {
+  margin-top: 1em;
+}
+
+#moves-container {
+  list-style: none;
+  padding: 0;
+}
+
+#moves-container li {
+  display: inline-block;
+  color: #444444;
+  border: 3px solid #444444;
+  margin: 0.1rem;
+  padding: 0.25em 1rem;
+  background-color: rgba(199, 255, 143, 0.75);
+  box-shadow: inset -3px -3px 0 0 rgb(199, 255, 143);
+  transition: scale;
+  cursor: pointer;
+}
+
+#control-panel button {
+  font-family: 'Press Start 2P';
+  font-size: 1rem;
+  border: 3px solid black;
+  padding: 0.5rem 1rem;
+  background-color: rgba(252, 124, 124, 0.75);
+  box-shadow: inset -3px -3px 0 0 rgb(252, 124, 124);
+  transition: all 0.1s ease-in;
+}
+
+#control-panel button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 97, 97, 0.75);
+  box-shadow: inset -4px -4px 0 0 rgb(255, 97, 97);
+}
+
+#control-panel button:active {
+  cursor: pointer;
+  background-color: rgba(255, 97, 97, 0.75);
+  box-shadow: inset 4px 4px 0 0 rgb(255, 97, 97);
+}
