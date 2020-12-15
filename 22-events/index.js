@@ -25,12 +25,12 @@ let postsArray = [
 
 
 // element.addEventListener("EVENT_TYPE", function(evt){
-    // DO SOME LOGIC HERE TO ALTER THE DOM
+// DO SOME LOGIC HERE TO ALTER THE DOM
 // })
 
 let newMemeForm = document.querySelector("form#newMemeForm")
 
-newMemeForm.addEventListener("submit", function(evt){
+newMemeForm.addEventListener("submit", function (evt) {
     evt.preventDefault()
     // preventDefault stops the default behavior of a form submission
     console.log("Form submission has happened")
@@ -53,10 +53,10 @@ newMemeForm.addEventListener("submit", function(evt){
 
 let memeButton = document.querySelector("button#memeButton")
 
-memeButton.addEventListener("click", function(evt){
+memeButton.addEventListener("click", function (evt) {
     // `evt` is an object with data about what just happened
 
-    if(postsArray.length > 0){
+    if (postsArray.length > 0) {
         let theMeme = postsArray.pop()
         // DOM MANIPULATION
         turnMemeToHTML(theMeme.meme, theMeme.description)
@@ -72,17 +72,17 @@ memeButton.addEventListener("click", function(evt){
 
 // SLAPPING ON THE DOM
 // "", "" -> <html></html>
-function turnMemeToHTML(memeUrl, memeDescription){
+function turnMemeToHTML(memeUrl, memeDescription) {
     let outerMostDiv = document.createElement("div")
-        outerMostDiv.className = "post"
+    outerMostDiv.className = "post"
 
     let imageDiv = document.createElement("div")
-        imageDiv.className = "image"
+    imageDiv.className = "image"
     let memeImage = document.createElement("img")
-        memeImage.src = memeUrl
+    memeImage.src = memeUrl
 
     let memeDescriptionH4 = document.createElement("h4")
-        memeDescriptionH4.textContent = memeDescription
+    memeDescriptionH4.textContent = memeDescription
 
     imageDiv.append(memeImage)
     outerMostDiv.append(imageDiv, memeDescriptionH4)
