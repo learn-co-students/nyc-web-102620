@@ -69,20 +69,13 @@ renderAllListings(postsArray)
 const listings = document.querySelector('#listings')
 
 listings.addEventListener('click', function (event) {
-    // console.log(event.target)
-    // event.target.className === 'delete-button'
-
     // STEP 2: identify the element we care about by using some conditional logic to determine which element was clicked on
     if (event.target.matches('.delete-button')) {
-        // STEP 3: DOM manipulation
-        console.log('delete button was clicked')
-        // debugger
-        // const postDiv = event.target.parentElement.parentElement
+        // STEP 3: DOM manipulation!
         const postDiv = event.target.closest('div.post')
         postDiv.remove()
     }
     else if (event.target.dataset.buttonType === 'upvote') {
-        console.log(event.target)
         const postDiv = event.target.closest('div.post')
         const likesPtag = postDiv.querySelector('.likes-count')
         let numOfLikes = parseInt(likesPtag.textContent) + 1
