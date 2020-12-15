@@ -1,4 +1,5 @@
 /****************** DOM Elements ******************/
+const listings = document.querySelector("#listings")
 let newMemeForm = document.querySelector("form#newMemeForm")
 let header = document.querySelector("#menu h1.logo")
 header.style.color = "white"
@@ -39,6 +40,22 @@ function renderOneMeme(postObject) {
     imageDiv.append(img, deleteButton)
     postDiv.append(imageDiv, newH4, numOfLikesPtag, likeButton)
     listings.append(postDiv)
+
+    /********************* NESTED EVENT LISTENERS! *********************/
+    /* The key with nested event listeners is to take advantage of the outer scope */
+    deleteButton.addEventListener('click', function (event) {
+        console.log(event.target)
+        postDiv.remove()
+    })
+
+    likeButton.addEventListener('click', function (event) {
+        console.log(event.target)
+        console.log(numOfLikesPtag.textContent)
+        // const newLikes = parseInt(numOfLikesPtag.textContent) + 1
+        postObject.likes = postObject.likes + 1
+        numOfLikesPtag.textContent = postObject.likes
+
+    })
 }
 
 function renderAllListings(memePostsArray) {
@@ -65,27 +82,12 @@ newMemeForm.addEventListener("submit", function (event) {
 renderAllListings(postsArray)
 
 
-// STEP 1: Find the closest common ancestor and add an event listener
-const listings = document.querySelector('#listings')
 
-listings.addEventListener('click', function (event) {
-    // console.log(event.target)
-    // event.target.className === 'delete-button'
+// NOT A GOOD APPROACH - WILL ONLY RUN ONCE
+// const deleteButtons = document.querySelectorAll('.delete-button')
 
-    // STEP 2: identify the element we care about by using some conditional logic to determine which element was clicked on
-    if (event.target.matches('.delete-button')) {
-        // STEP 3: DOM manipulation
-        console.log('delete button was clicked')
-        // debugger
-        // const postDiv = event.target.parentElement.parentElement
-        const postDiv = event.target.closest('div.post')
-        postDiv.remove()
-    }
-    else if (event.target.dataset.buttonType === 'upvote') {
-        console.log(event.target)
-        const postDiv = event.target.closest('div.post')
-        const likesPtag = postDiv.querySelector('.likes-count')
-        let numOfLikes = parseInt(likesPtag.textContent) + 1
-        likesPtag.textContent = numOfLikes
-    }
-})
+// deleteButtons.forEach(function (btn) {
+//     btn.addEventListener('click', function (event) {
+//         console.log('Delete button clicked!', event.target)
+//     })
+// })
