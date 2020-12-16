@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Memes</title>
+   <!-- Favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="pics/favicon_io/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="pics/favicon_io/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon_io/favicon-16x16.png">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Sniglet&display=swap" rel="stylesheet">
+   <!-- CSS -->
+   <link rel="stylesheet" href="style.css">
+   <!-- Javascript-->
+   <script src="data.js"></script>
+   <script src="index.js" defer></script>
+</head>
+
+<body>
+   <header id="menu">
+      <h1 class="logo">Relatable Memes 4 Programmers</h1>
+   </header>
+   <main>
+      <div id="listings">
+      </div>
+      <hr>
+      <h2>Create New Meme</h2>
+      <form id="newMemeForm">
+         <label for="picture">Meme URL</label>
+         <input type="text" id="picture" name="meme" />
+         <label for="description">Meme Description</label>
+         <textarea id="description" name="description"></textarea>
+         <input type="submit" value="Create New Meme!" />
+      </form>
+
+   </main>
+</body>
+
+</html>

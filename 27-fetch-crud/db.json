@@ -1,0 +1,46 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "meme": "pics/bugfix.jpeg",
+      "description": "Has this ever happened to you?",
+      "likes": 88
+    },
+    {
+      "id": 2,
+      "meme": "pics/debuggin.jpeg",
+      "description": "I'm coming for you bug!",
+      "likes": 1001
+    },
+    {
+      "id": 3,
+      "meme": "pics/dino.jpeg",
+      "description": "404",
+      "likes": 3
+    },
+    {
+      "id": 4,
+      "meme": "pics/elvish.jpeg",
+      "description": "Should've added comments & written a decent readme",
+      "likes": 10
+    },
+    {
+      "id": 5,
+      "meme": "pics/space.jpeg",
+      "description": "Have standards people, standards!!!",
+      "likes": 77
+    },
+    {
+      "id": 6,
+      "meme": "pics/restaurant.jpg",
+      "description": "Cheers to working code!",
+      "likes": 90
+    },
+    {
+      "id": 7,
+      "meme": "pics/googling.jpeg",
+      "description": "Googling? No. Duck duck go-ing.",
+      "likes": 90
+    }
+  ]
+}
