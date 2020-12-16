@@ -4,7 +4,7 @@
       "id": 1,
       "meme": "pics/bugfix.jpeg",
       "description": "Has this ever happened to you?",
-      "likes": 88
+      "likes": 1000
     },
     {
       "id": 2,
@@ -41,6 +41,24 @@
       "meme": "pics/googling.jpeg",
       "description": "Googling? No. Duck duck go-ing.",
       "likes": 90
+    },
+    {
+      "description": "let's see!",
+      "meme": "pics/pigeon.png",
+      "likes": 0,
+      "id": 8
+    },
+    {
+      "description": "add again",
+      "meme": "pics/pigeon.png",
+      "likes": 8,
+      "id": 9
+    },
+    {
+      "description": "another one!",
+      "meme": "pics/pigeon.png",
+      "likes": 0,
+      "id": 10
     }
   ]
 }
