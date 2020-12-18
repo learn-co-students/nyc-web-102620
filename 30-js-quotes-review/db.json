@@ -59,21 +59,6 @@
       "quote": "test",
       "author": "ian",
       "id": 12
-    },
-    {
-      "quote": "test again",
-      "author": "ian",
-      "id": 13
-    },
-    {
-      "quote": "test again!",
-      "author": "ian",
-      "id": 14
-    },
-    {
-      "quote": "test 123",
-      "author": "ian",
-      "id": 15
     }
   ],
   "likes": [
@@ -86,6 +71,70 @@
       "quoteId": 10,
       "id": 2,
       "createdAt": 1558524358
+    },
+    {
+      "quoteId": 2,
+      "id": 3
+    },
+    {
+      "quoteId": 2,
+      "id": 4
+    },
+    {
+      "quoteId": 3,
+      "id": 5
+    },
+    {
+      "quoteId": 3,
+      "id": 6
+    },
+    {
+      "quoteId": 3,
+      "id": 7
+    },
+    {
+      "quoteId": 3,
+      "id": 8
+    },
+    {
+      "quoteId": 3,
+      "id": 9
+    },
+    {
+      "quoteId": 3,
+      "id": 10
+    },
+    {
+      "quoteId": 3,
+      "id": 11
+    },
+    {
+      "quoteId": 4,
+      "id": 12
+    },
+    {
+      "quoteId": 4,
+      "id": 13
+    },
+    {
+      "quoteId": 4,
+      "id": 14
+    },
+    {
+      "quoteId": 4,
+      "id": 15
+    },
+    {
+      "quoteId": 4,
+      "id": 16
+    },
+    {
+      "quoteId": 4,
+      "id": 17
+    },
+    {
+      "quoteId": 4,
+      "id": 18
     }
   ]
 }

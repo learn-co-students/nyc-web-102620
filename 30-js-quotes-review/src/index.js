@@ -4,6 +4,34 @@ const quoteForm = document.querySelector("#new-quote-form")
 
 
 /********* Event Handlers *********/
+quoteListUl.addEventListener("click", event => {
+  // DELETE
+  if (event.target.matches(".btn-danger")) {
+    const id = event.target.dataset.id
+    const quoteLi = event.target.closest(".quote-card")
+    deleteQuote(id)
+    // and remove the quote LI from the page
+    quoteLi.remove()
+  }
+  // UPDATE
+  if (event.target.matches(".btn-success")) {
+    const id = parseInt(event.target.dataset.id)
+    
+    const newLikeObj = {
+      quoteId: id
+    }
+    
+    createLike(newLikeObj)
+
+    // find the current number of likes
+    const span = event.target.querySelector("span")
+    // increment by 1
+    const numberOfLikes = parseInt(span.textContent) + 1
+    // update it on the DOM
+    span.textContent = numberOfLikes
+  }
+})
+
 quoteForm.addEventListener("submit", event => {
   event.preventDefault()
 
@@ -26,7 +54,6 @@ quoteForm.addEventListener("submit", event => {
 
 /********* Render Functions *********/
 function renderQuote(quoteObj) {
-  console.log(quoteObj)
   // render each quote within ul#quote-list
   let likes = 0
   if (quoteObj.likes) {
@@ -42,8 +69,8 @@ function renderQuote(quoteObj) {
       </p>
       <footer class="blockquote-footer">${quoteObj.author}</footer>
       <br />
-      <button class="btn-success">Likes: <span>${likes}</span></button>
-      <button class="btn-danger">Delete</button>
+      <button class="btn-success" data-id="${quoteObj.id}">Likes: <span>${likes}</span></button>
+      <button class="btn-danger" data-id="${quoteObj.id}">Delete</button>
     </blockquote>
   `
   quoteListUl.append(quoteLi)
@@ -52,8 +79,31 @@ function renderQuote(quoteObj) {
 
 
 /********* Fetch Functions *********/
-function createQuote(newQuoteObj) {
+function createLike(likeObj) {
+  fetch('http://localhost:3000/likes', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(likeObj),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+  })
+}
 
+function deleteQuote(id) {
+  fetch(`http://localhost:3000/quotes/${id}`, {
+    method: 'DELETE',
+  })
+  // .then(r => r.json())
+  // .then(() => {
+  //   quoteLi.remove()
+  // })
+}
+
+function createQuote(newQuoteObj) {
   fetch('http://localhost:3000/quotes', {
     method: 'POST',
     headers: {
@@ -81,5 +131,4 @@ function getQuotes() {
 
 /********* Initial Render *********/
 getQuotes()
-
 
