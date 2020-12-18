@@ -1,0 +1,8 @@
+body {
+  background: rgb(11, 22, 33);
+  color: white;
+}
+
+#quote-list {
+  padding: 20px;
+}
