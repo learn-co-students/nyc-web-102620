@@ -102,5 +102,6 @@ function renderAllToys(toyArray) {
 fetch("http://localhost:3000/toys")
   .then(r => r.json())
   .then(toyArray => {
+    console.log(toyArray)
     renderAllToys(toyArray)
   })
