@@ -39,8 +39,27 @@ let showLoginForm = () => {
 
 let handleLoginForm = (evt) => {
     evt.preventDefault()
-    let email = evt.target.username.value
-    console.log("WHAT DO WE DO?")
+    let name = evt.target.username.value
+    
+    fetch("http://localhost:3000/please_log_me_in", {
+        method: "POST",
+        headers: {
+            "Accept": "Application/json",
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({
+            hereIsTheUserName: name
+        })
+    })
+    .then(res => res.json())
+    .then((response) => {
+        if(response.id){
+            showTeacherInformation(response)
+        } else {
+            console.error(response.error)
+        }
+    })
+
 }
 
 

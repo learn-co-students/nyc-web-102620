@@ -120,4 +120,9 @@ If you want to include multiple serializers, inside your `config/initializers/ac
 ```rb
   ActiveModelSerializers.config.default_includes = '**'
 ```
-s
+
+Without this line, 
+A -> B.
+
+With this line:
+A -> B -> C -> D -> ...
