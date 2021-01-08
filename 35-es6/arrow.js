@@ -40,7 +40,7 @@ let arrayOfObjs = [{name: "zebra"}, {name: "aardvark"}, {name: "penguin"}]
 
 let doubleNums = arrayOfNumbers.map(num => num * 2)
 
-// let doubleNums = arrayOfNumbers.map((num) => {
+// let doubleNums = arrayOqfNumbers.map((num) => {
     // return num * 2
 // })
 
