@@ -32,3 +32,5 @@ const projects = [
     image: "https://via.placeholder.com/300",
   },
 ];
+
+export default projects;
