@@ -1,5 +1,10 @@
 # Components, Props and JSX
 
+## DQ Questions?
+
+- bonus!
+- order? looking at example, look at CSS, trial and error, look at what components _return_
+
 ## SWBATs
 
 - [ ] Visualize/identify Components on any website
