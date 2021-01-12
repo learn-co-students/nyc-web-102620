@@ -1,5 +1,9 @@
 # State and Events
 
+## DQ Questions?
+
+- setting state: callback vs value (this works 95%); what's happening under the hood?
+
 ## SWBATs
 
 - [ ] Add event handlers to elements in React

@@ -7,7 +7,7 @@ import ProjectList from "./ProjectList";
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header title="Science Fair" />
       <ClickCounter />
       <ProjectForm />
       <ProjectList />

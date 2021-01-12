@@ -1,11 +1,12 @@
 import React from "react";
 
-function Header() {
+function Header({ title, logo = "//" }) {
+  console.log(logo);
   return (
     <header>
       <h1>
-        <span className="logo">{"//"}</span>
-        Science Fair
+        <span className="logo">{logo}</span>
+        {title}
       </h1>
       <button>Dark Mode</button>
     </header>
