@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import ProjectItem from "./ProjectItem";
 // TODO: replace this with a fetch request (eventually)
 import projects from "../data/projects";
 
 function ProjectList() {
-  const projectItems = projects.map((project) => {
+  const [projectSearch, setProjectSearch] = useState("");
+
+  // i want a variable that I can compare with the names of the projects
+  // so that I can filter the list of items being displayed
+
+  // filter to change the array we're displaying
+  const filteredProjects = projects.filter((project) => {
+    return project.name.toLowerCase().includes(projectSearch.toLowerCase());
+  });
+
+  // map to turn the array into components
+  const projectItems = filteredProjects.map((project) => {
     return <ProjectItem key={project.id} project={project} />;
   });
 
@@ -20,7 +31,12 @@ function ProjectList() {
         <button>Phase 2</button>
         <button>Phase 1</button>
       </div>
-      <input type="text" placeholder="Search..." />
+
+      <input
+        type="text"
+        placeholder="Search..."
+        onChange={(e) => setProjectSearch(e.target.value)}
+      />
 
       <ul className="cards">{projectItems}</ul>
     </section>

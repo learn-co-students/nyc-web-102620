@@ -10,7 +10,7 @@ import React, { useState } from "react";
 function ClickCounter() {
   // let likes = 0;
   const [likes, setLikes] = useState(0); // => [stateVariable, stateSetterFunction]
-  const [toggle, setToggle] = useState(true);
+  // const [toggle, setToggle] = useState(true);
 
   function handleClick() {
     // console.log("before setLikes:", likes);
@@ -37,7 +37,7 @@ function ClickCounter() {
 
   return (
     <div style={{ textAlign: "center" }}>
-      {toggle ? <h2>There have been {likes} clicks</h2> : null}
+      <h2>There have been {likes} clicks</h2>
       <button onClick={handleClick}>Click Me {likes}</button>
     </div>
   );
