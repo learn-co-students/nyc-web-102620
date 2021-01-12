@@ -15,7 +15,7 @@
   - Show props destructuring
 - [ ] Review [React Docs on Events](https://reactjs.org/docs/events.html)
 - [ ] Handle events and introduce state by creating a click counter
-- [ ] Use `setState` to update state in a component
+- [ ] Use the `useState` hook to create a **state variable**
   - Show that `setState` is asynchronous
   - Using `setState` with value vs function
 

@@ -4,7 +4,7 @@ function Header() {
   return (
     <header>
       <h1>
-        <span className="logo">&#x2F;&#x2F;</span>
+        <span className="logo">{"//"}</span>
         Science Fair
       </h1>
       <button>Dark Mode</button>

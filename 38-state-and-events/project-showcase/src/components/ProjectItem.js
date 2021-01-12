@@ -7,6 +7,7 @@ function ProjectItem(props) {
         <img src={props.project.image} alt={props.project.name} />
         <button className="claps">👏{0}</button>
       </div>
+
       <div className="details">
         <h4>{props.project.name}</h4>
         <p>{props.project.about}</p>
@@ -16,6 +17,7 @@ function ProjectItem(props) {
           </p>
         ) : null}
       </div>
+
       <div className="extra">
         <span className="badge blue">Phase {props.project.phase}</span>
       </div>

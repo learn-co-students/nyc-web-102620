@@ -1,15 +1,16 @@
 import React from "react";
+import ClickCounter from "./ClickCounter";
 import Header from "./Header";
 import ProjectForm from "./ProjectForm";
 import ProjectList from "./ProjectList";
-import projects from "../data/projects";
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <ClickCounter />
       <ProjectForm />
-      <ProjectList projects={projects} />
+      <ProjectList />
     </div>
   );
 }
