@@ -1,7 +1,6 @@
 import React from "react";
 
 function Header({ title, logo = "//" }) {
-  console.log(logo);
   return (
     <header>
       <h1>

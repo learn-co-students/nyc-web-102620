@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import ProjectItem from "./ProjectItem";
-// TODO: replace this with a fetch request (eventually)
-import projects from "../data/projects";
 
-function ProjectList() {
+function ProjectList({ projects }) {
   const [phaseFilter, setPhaseFilter] = useState("All");
   const [projectSearch, setProjectSearch] = useState("");
 
-  // filter to change the array we're displaying based on state
+  // filter the array we're displaying based on state
   const filteredProjects = projects
     .filter((project) => {
       return phaseFilter === "All" || project.phase === phaseFilter;
