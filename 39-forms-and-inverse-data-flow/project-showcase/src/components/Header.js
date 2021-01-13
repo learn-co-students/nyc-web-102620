@@ -1,13 +1,15 @@
 import React from "react";
 
-function Header({ title, logo = "//" }) {
+function Header({ title, logo = "//", isDarkMode, onDarkModeClick }) {
   return (
     <header>
       <h1>
         <span className="logo">{logo}</span>
         {title}
       </h1>
-      <button>Dark Mode</button>
+      <button onClick={onDarkModeClick}>
+        {isDarkMode ? "Dark" : "Light"} Mode
+      </button>
     </header>
   );
 }

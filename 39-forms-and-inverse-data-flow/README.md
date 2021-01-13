@@ -1,5 +1,10 @@
 # Forms & Inverse Data Flow
 
+## DQ
+
+- active/not active on the buttons
+- pokemon div had an error
+
 ## SWBATs
 
 - [ ] Draw a component hierarchy and describe the Flow of Information
@@ -12,6 +17,8 @@
 
 ### Part 1
 
+- [ ] Add `fetch` on click
+  - for code sandbox demos: `npx jsongrok-server https://raw.githubusercontent.com/learn-co-students/nyc-web-102620/main/39-forms-and-inverse-data-flow/project-showcase/db.json`
 - [ ] Demonstrate inverse data flow
   - Implement Dark Mode feature
   - **Breakout Exercise**: Refactor a filter component out of `ProjectList` and
