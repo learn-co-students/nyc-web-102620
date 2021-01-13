@@ -24,6 +24,16 @@ function App() {
     setIsDarkMode(!isDarkMode);
   }
 
+  function handleAddProject(newProject) {
+    // ADD to an array:
+    // NO: projects.push(newProject)
+
+    // create a NEW array
+    const newProjectArray = [newProject, ...projects];
+    // setState - update the value & rerender
+    setProjects(newProjectArray);
+  }
+
   return (
     <div className={isDarkMode ? "App" : "App light"}>
       <Header
@@ -31,7 +41,7 @@ function App() {
         isDarkMode={isDarkMode}
         onDarkModeClick={handleDarkModeClick}
       />
-      <ProjectForm />
+      <ProjectForm onAddProject={handleAddProject} />
       <ProjectList projects={projects} />
 
       <button onClick={handleFetchProjects}>Fetch Projects</button>
