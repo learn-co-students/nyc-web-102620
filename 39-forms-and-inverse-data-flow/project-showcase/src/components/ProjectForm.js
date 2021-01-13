@@ -15,22 +15,27 @@ import React, { useState } from "react";
 // Uncontrolled Component - react does't have the STATE that match the DOM :(
 
 function ProjectForm({ onAddProject }) {
-  const [name, setName] = useState("");
-  const [about, setAbout] = useState("");
-  const [phase, setPhase] = useState(1);
-  const [link, setLink] = useState("");
-  const [image, setImage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    about: "",
+    phase: 1,
+    link: "",
+    image: "",
+  });
+
+  // const [name, setName] = useState("");
+  // const [about, setAbout] = useState("");
+  // const [phase, setPhase] = useState(1);
+  // const [link, setLink] = useState("");
+  // const [image, setImage] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    const formData = {
-      name: name,
-      about: about,
-      phase: phase,
-      link: link,
-      image: image,
-    };
+    // const bodyObj = {
+    //   ...formData,
+    //   phase: parseInt(formData.phase)
+    // }
 
     fetch("http://localhost:4000/projects", {
       method: "POST",
@@ -45,6 +50,22 @@ function ProjectForm({ onAddProject }) {
       });
   }
 
+  function handleChange(event) {
+    const key = event.target.id;
+
+    let value = event.target.value;
+    if (key === "phase") {
+      value = parseInt(value);
+    }
+
+    setFormData({
+      ...formData,
+      [key]: value,
+    });
+  }
+
+  console.log(formData);
+
   return (
     <section>
       <form onSubmit={handleSubmit} className="form" autoComplete="off">
@@ -55,10 +76,10 @@ function ProjectForm({ onAddProject }) {
           type="text"
           id="name"
           name="name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
+          value={formData.name}
+          onChange={handleChange}
         />
-        {name.length === 0 ? (
+        {formData.name.length === 0 ? (
           <p style={{ color: "red" }}>You must provide a name</p>
         ) : null}
 
@@ -66,16 +87,16 @@ function ProjectForm({ onAddProject }) {
         <textarea
           id="about"
           name="about"
-          value={about}
-          onChange={(event) => setAbout(event.target.value)}
+          value={formData.about}
+          onChange={handleChange}
         />
 
         <label htmlFor="phase">Phase</label>
         <select
           name="phase"
           id="phase"
-          value={phase}
-          onChange={(event) => setPhase(parseInt(event.target.value))}
+          value={formData.phase}
+          onChange={handleChange}
         >
           <option value="1">Phase 1</option>
           <option value="2">Phase 2</option>
@@ -89,8 +110,8 @@ function ProjectForm({ onAddProject }) {
           type="text"
           id="link"
           name="link"
-          value={link}
-          onChange={(event) => setLink(event.target.value)}
+          value={formData.link}
+          onChange={handleChange}
         />
 
         <label htmlFor="image">Screenshot</label>
@@ -98,8 +119,8 @@ function ProjectForm({ onAddProject }) {
           type="text"
           id="image"
           name="image"
-          value={image}
-          onChange={(event) => setImage(event.target.value)}
+          value={formData.image}
+          onChange={handleChange}
         />
 
         <button type="submit">Add Project</button>
