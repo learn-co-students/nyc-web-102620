@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Pokemon({ pokemon }) {
   if (!pokemon) return <h3>Loading...</h3>;
@@ -41,11 +41,13 @@ function PokeSearch() {
   // TODO: fetch pokemon when the component loads
   // TODO: fetch pokemon when the query changes
 
-  function fetchPokemon() {
+  useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${query}`)
       .then((r) => r.json())
-      .then(setPokemon);
-  }
+      .then((pokemon) => setPokemon(pokemon));
+  }, [query]);
+
+  console.log({ query });
 
   return (
     <div>

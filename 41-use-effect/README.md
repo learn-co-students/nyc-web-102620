@@ -1,5 +1,7 @@
 # Side Effects and Fetching Data
 
+## DQ Questions?
+
 ## SWBATs
 
 - [ ] Define a side effect in terms of React components

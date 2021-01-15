@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import ProjectForm from "./ProjectForm";
 import ProjectList from "./ProjectList";
+
+// App() -> useEffect() -> fetch() -> setProjects() -> App()
 
 function App() {
   const [projects, setProjects] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  function handleFetchClick() {
+  console.log("App rendering (App function was called)");
+
+  // when our component first loads,
+  // fetch some data from an API
+  // and set that data in state
+  useEffect(() => {
     fetch("http://localhost:4000/projects")
       .then((r) => r.json())
       .then((projectArray) => {
         setProjects(projectArray);
       });
-  }
+  }, []);
 
   function handleDarkModeClick() {
     setIsDarkMode(!isDarkMode);
@@ -33,8 +40,6 @@ function App() {
       />
       <ProjectForm onAddProject={handleAddProject} />
       <ProjectList projects={projects} />
-
-      <button onClick={handleFetchClick}>Fetch Projects</button>
     </div>
   );
 }
