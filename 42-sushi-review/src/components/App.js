@@ -17,11 +17,24 @@ function App() {
   // -> [{id: 1, name: "Ebit", eaten: true}]
 
   const [sushis, setSushis] = useState([]);
-  const [wallet, setWallet] = useState(100);
+  const wallet = 100;
 
   const eatenSushi = sushis.filter((sushi) => {
     return sushi.eaten;
   });
+
+  // given an array of object [{price: 10},{price: 15}]
+  // return the total price
+  const eatenSushiCost = eatenSushi.reduce((total, sushi) => {
+    return total + sushi.price;
+  }, 0);
+  // let total = 0
+  // for (const sushi of eatenSushi) {
+  //   total += sushi.price
+  // }
+  console.log({ eatenSushiCost });
+
+  const remainingWallet = wallet - eatenSushiCost;
 
   useEffect(() => {
     fetch(API)
@@ -46,7 +59,7 @@ function App() {
     // do you have enough money left to eat this?
     // have you already eaten this?
 
-    if (!eatenSushi.eaten && wallet >= eatenSushi.price) {
+    if (!eatenSushi.eaten && remainingWallet >= eatenSushi.price) {
       const updatedSushis = sushis.map((sushi) => {
         if (sushi.id === eatenSushi.id) {
           return {
@@ -58,7 +71,6 @@ function App() {
         }
       });
       setSushis(updatedSushis);
-      setWallet(wallet - eatenSushi.price);
     } else {
       alert("You're broke lol 💵");
     }
@@ -67,7 +79,7 @@ function App() {
   return (
     <div className="app">
       <SushiContainer sushis={sushis} onEatSushi={handleEatSushi} />
-      <Table plates={eatenSushi} wallet={wallet} />
+      <Table plates={eatenSushi} wallet={remainingWallet} />
     </div>
   );
 }
