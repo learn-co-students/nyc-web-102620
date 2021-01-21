@@ -1,5 +1,5 @@
-import BrowserRouter from "./BrowserRouter";
-import Route from "./Route";
-import Link from "./Link";
+import BrowserRouter from "./components/BrowserRouter";
+import Route from "./components/Route";
+import Link from "./components/Link";
 
 export { BrowserRouter, Route, Link };

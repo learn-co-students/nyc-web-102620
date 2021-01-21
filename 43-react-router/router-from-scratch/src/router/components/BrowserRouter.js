@@ -1,27 +1,25 @@
 import React, { useEffect, useState } from "react";
 import history from "history/browser";
-
-export const BrowserRouterContext = React.createContext();
+import { RouterContext } from "../context";
 
 function BrowserRouter({ children }) {
   const [location, setLocation] = useState(history.location);
 
   useEffect(() => {
-    history.listen(({ location, action }) => {
-      console.log(action, location.pathname, location.state);
+    return history.listen(({ location }) => {
       setLocation(location);
     });
   }, []);
 
-  const value = {
-    location,
-    history,
-  };
-
   return (
-    <BrowserRouterContext.Provider value={value}>
+    <RouterContext.Provider
+      value={{
+        location,
+        history,
+      }}
+    >
       {children}
-    </BrowserRouterContext.Provider>
+    </RouterContext.Provider>
   );
 }
 
