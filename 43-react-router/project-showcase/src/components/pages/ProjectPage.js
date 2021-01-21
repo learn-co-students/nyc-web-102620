@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 function ProjectDetail() {
   const [claps, setClaps] = useState(0);
   const [project, setProject] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const id = 5;
+  const params = useParams();
+  console.log(params);
+
+  // const id = 1;
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/projects/${id}`)
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/projects/${params.id}`)
       .then((r) => r.json())
       .then((project) => {
         setProject(project);
         setIsLoaded(true);
       });
-  }, [id]);
+  }, [params.id]);
 
   if (!isLoaded) return <h2>Loading...</h2>;
 
@@ -71,6 +75,9 @@ function ProjectDetail() {
           ))}
         </div>
       </div>
+      <Link to={`/projects/${parseInt(params.id) + 1}`} className="button">
+        Next
+      </Link>
     </section>
   );
 }

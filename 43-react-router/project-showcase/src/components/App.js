@@ -1,29 +1,51 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
 import Header from "./Header";
-import Home from "./Home";
-import ProjectForm from "./ProjectForm";
-import ProjectList from "./ProjectList";
-import ProjectDetail from "./ProjectPage";
+import Home from "./pages/Home";
+import ProjectForm from "./pages/ProjectForm";
+import ProjectList from "./pages/ProjectList";
+import ProjectDetail from "./pages/ProjectPage";
+
+// development - local: http://localhost:3000
+// production: http://project-showcase.heroku.com
 
 function App() {
-  const [projects, setProjects] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [currentUser, setCurrentUser] = useState(null);
-
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/projects`)
-      .then((r) => r.json())
-      .then(setProjects);
-  }, []);
 
   function handleDarkModeClick() {
     setIsDarkMode(!isDarkMode);
   }
 
   function handleAddProject(newProject) {
-    const newProjectArray = [newProject, ...projects];
-    setProjects(newProjectArray);
+    // const newProjectArray = [newProject, ...projects];
+    // setProjects(newProjectArray);
   }
+
+  // function getCurrentPage() {
+  //   const pathname = window.location.pathname;
+
+  //   if (pathname === "/") {
+  //     return <Home />;
+  //   } else if (pathname === "/projects/add") {
+  //     return <ProjectForm onAddProject={handleAddProject} />;
+  //   } else if (pathname === "/projects") {
+  //     return <ProjectList projects={projects} />;
+  //   } else if (pathname === "/projects/1") {
+  //     return <ProjectDetail />;
+  //   } else {
+  //     return <h1>404 not found</h1>;
+  //   }
+  // }
+
+  /*
+  function Route({ path, children }) {
+    if (location.pathname === path) {
+      return children
+    }
+    return null
+  }
+  */
 
   return (
     <div className={isDarkMode ? "App" : "App light"}>
@@ -34,11 +56,23 @@ function App() {
         currentUser={currentUser}
         setCurrentUser={setCurrentUser}
       />
-      {/* wouldn't it be nice if these were separate pages? */}
-      <Home />
-      <ProjectForm onAddProject={handleAddProject} />
-      <ProjectList projects={projects} />
-      <ProjectDetail />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/projects/add">
+          <ProjectForm onAddProject={handleAddProject} />
+        </Route>
+        <Route exact path="/projects/:id">
+          <ProjectDetail />
+        </Route>
+        <Route path="/projects">
+          <ProjectList />
+        </Route>
+        <Route path="*">
+          <Redirect to="/" />
+        </Route>
+      </Switch>
     </div>
   );
 }

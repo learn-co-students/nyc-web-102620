@@ -1,10 +1,17 @@
-import React, { useState } from "react";
-import FilterBar from "./FilterBar";
-import ProjectItem from "./ProjectItem";
+import React, { useEffect, useState } from "react";
+import FilterBar from "../FilterBar";
+import ProjectItem from "../ProjectItem";
 
-function ProjectList({ projects }) {
+function ProjectList() {
+  const [projects, setProjects] = useState([]);
   const [phaseFilter, setPhaseFilter] = useState("All");
   const [projectSearch, setProjectSearch] = useState("");
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/projects`)
+      .then((r) => r.json())
+      .then(setProjects);
+  }, []);
 
   const projectItems = projects
     .filter((project) => {

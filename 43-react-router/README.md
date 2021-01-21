@@ -10,6 +10,13 @@
 - [ ] Use `push` and `history` to navigate pages
 - [ ] Create dynamic routes and use `params`
 
+### Frontend Routes
+
+- / => home page
+- /projects/add => create a new project
+- /projects => all of projects
+- /projects/:id => see one project
+
 ## Outline
 
 - [ ] Discuss SPA architecture
@@ -28,7 +35,20 @@
 
 ### Benefits
 
+- no routes
+- no reloading separate pages - faster!
+- easier to debug, all in one place
+- not as much load time! (maybe first load is slower, all the other pages faster)
+
 ### Challenges
+
+- bookmarks!
+- more complicated design (components vs MVC architecture)
+- no login page :(
+- back button
+- links
+- having URLs on our page to tell a user where they are (REST)
+  - REpresentational State Transfer
 
 ### Static vs Dynamic Routing
 

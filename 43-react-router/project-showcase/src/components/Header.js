@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Header({
   title,
@@ -20,6 +21,17 @@ function Header({
     setCurrentUser(null);
   }
 
+  /*
+  function Link({ to, children, ...props }) {
+    function handleClick(e) {
+      e.preventDefault()
+      history.push(to)
+    }
+
+    return <a href={to} onClick={handleClick} {...props}>{children}</a>
+  }
+  */
+
   return (
     <header>
       <h1>
@@ -27,12 +39,12 @@ function Header({
         {title}
       </h1>
       <nav>
-        <a className="button" href="/projects">
+        <NavLink exact to="/projects" className="button">
           All Projects
-        </a>
-        <a className="button" href="/projects/new">
+        </NavLink>
+        <NavLink to="/projects/add" className="button">
           Add Project
-        </a>
+        </NavLink>
         {currentUser ? (
           <button onClick={logout}>Logout</button>
         ) : (
