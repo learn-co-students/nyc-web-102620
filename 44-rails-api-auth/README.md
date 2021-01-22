@@ -14,6 +14,18 @@
   - send token in request
 - [ ] Store token in frontend
 
+## Auth Discussion
+
+- cookies! / sessions!
+- encryption!
+
+- sign in (create a new user) / login (find existing user) - username/password
+- bcrypt / password_digest
+
+- request Sign In - response session[:user_id] (saved to a cookie)
+  - cookies saved in computer on client
+- request edit profile (include that cookie) - look at the cookie on the server
+
 ## Rails Setup
 
 Create Rails API:
