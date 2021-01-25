@@ -15,16 +15,15 @@ class UsersController < ApplicationController
   #     render json: user
   #   rescue
   #     render json: { error: "nice try, pal." }, status: :unauthorized
-  #   end
-      
+  #   end  
   # end
 
-  def profile
+  def show
     user = AuthorizeRequest.new(request.headers).user
     if user
       render json: user
     else
-      render json: { error: "nice try, pal." }, status: :unauthorized
+      render json: { error: "Unauthorized request" }, status: :unauthorized
     end
   end
 

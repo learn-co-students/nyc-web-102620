@@ -460,13 +460,13 @@ requests. For example, let's build out a feature that allows users to edit their
 profile. We can start by adding a new route:
 
 ```rb
-patch "/profile", to: "users#profile"
+patch "/profile", to: "users#show"
 ```
 
 And a controller:
 
 ```sh
-rails g controller users profile
+rails g controller users
 ```
 
 In the controller action, we want to do the following:
@@ -481,7 +481,7 @@ In the controller action, we want to do the following:
 ```rb
 class UsersController < ApplicationController
 
-  def profile
+  def show
     auth_token = headers['Authorization'].split.last if headers['Authorization'].present?
     begin
       decoded_token = JWT.decode(auth_token, Rails.application.secrets.secret_key_base, true, { algorthim: 'HS256' })[0]
@@ -533,7 +533,7 @@ end
 Now, we can update our controller action like so:
 
 ```rb
-def profile
+def show
   user = AuthorizeRequest.new(request.headers).user
   if user
     user.update(avatar: params[:avatar], bio: params[:bio])
@@ -565,9 +565,9 @@ action we use this `authenticate` action before. So our profile action simply be
 class UsersController < ApplicationController
   before_action :authenticate
 
-  def profile
-    @user.update(avatar: params[:avatar], bio: params[:bio])
-    render json: @user
+  def show
+    @current_user.update(avatar: params[:avatar], bio: params[:bio])
+    render json: @current_user
   end
 end
 ```
