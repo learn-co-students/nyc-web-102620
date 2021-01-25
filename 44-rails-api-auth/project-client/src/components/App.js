@@ -45,23 +45,31 @@ function App() {
 
   // TODO: autologin: when the component renders, make a request with the token
   useEffect(() => {
-    const token = localStorage.getItem("token");
-
+    // fake auth
     // fetch("http://localhost:3000/profile")
-    fetch("http://localhost:3000/profile", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((r) => r.json())
-      .then((user) => {
-        // save the user into state
-        setCurrentUser(user);
-      });
-  }, []);
+    //   .then((r) => r.json())
+    //   .then((user) => {
+    //     // save the user into state
+    //     setCurrentUser(user);
+    //   });
 
-  // and redirect
+    // token auth
+    const token = localStorage.getItem("token");
+    if (token) {
+      fetch("http://localhost:3000/profile", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((r) => r.json())
+        .then((user) => {
+          // save the user into state
+          setCurrentUser(user);
+          // and redirect
+        });
+    }
+  }, []);
 
   console.log({ currentUser });
 
