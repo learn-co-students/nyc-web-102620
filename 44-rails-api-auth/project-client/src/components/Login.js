@@ -1,14 +1,29 @@
 import React, { useState } from "react";
 
-function Login() {
+function Login({ setCurrentUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
     // TODO: make a fetch request to login the current user
-    // save the user's token
-    // then set that user in state in our App component
+    const formData = { username, password };
+
+    fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        // then set that user in state in our App component
+        setCurrentUser(data.user);
+        // save the user's token
+        localStorage.setItem("token", data.token);
+      });
+
     // and redirect to the home page
   }
 

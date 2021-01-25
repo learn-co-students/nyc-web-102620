@@ -15,6 +15,12 @@
 - [ ] Authenticate user for other requests using token
 - [ ] **Bonus**: Response error handling
 
+## Backend Routes
+
+- `POST /signup`: create a new account
+- `POST /register`: sign into an existing account
+- `GET /profile`: get user data
+
 ## Register/Login
 
 Our first authentication actions on the frontend are to allow a user to register
