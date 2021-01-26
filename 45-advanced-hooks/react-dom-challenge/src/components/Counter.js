@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useContext } from "react";
 import Controls from "./Controls";
 import Likes from "./Likes";
+import { PauseContext } from "../context/pause";
 
 function getRandomNumber() {
   // random between 1 and
@@ -9,9 +10,20 @@ function getRandomNumber() {
   return number;
 }
 
-function Counter({ paused, togglePaused }) {
+function Counter({ togglePaused }) {
   const [count, setCount] = useState(0);
   const [likedNumbers, setLikedNumbers] = useState({});
+  const prevCountRef = useRef(0);
+
+  const { paused } = useContext(PauseContext);
+
+  console.log(paused);
+
+  // when count changes
+  useEffect(() => {
+    // save the count
+    prevCountRef.current = count;
+  }, [count]);
 
   useEffect(() => {
     if (!paused) {
@@ -43,14 +55,20 @@ function Counter({ paused, togglePaused }) {
     });
   }
 
+  let color = "black";
+  if (count > prevCountRef.current) {
+    color = "green";
+  } else if (count < prevCountRef.current) {
+    color = "red";
+  }
+
   return (
     <div>
-      <h2>Counter: {count}</h2>
+      <h2 style={{ color: color }}>Counter: {count}</h2>
       <Controls
         increment={increment}
         decrement={decrement}
         like={like}
-        paused={paused}
         togglePaused={togglePaused}
       />
       <Likes likedNumbers={likedNumbers} />

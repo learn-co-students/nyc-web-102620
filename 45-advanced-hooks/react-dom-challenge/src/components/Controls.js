@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { PauseContext } from "../context/pause";
 
-function Controls({ increment, decrement, like, paused, togglePaused }) {
+function Controls({ increment, decrement, like }) {
+  const { paused, toggle } = useContext(PauseContext);
+
+  console.log({ paused, toggle });
   return (
     <div>
       <button onClick={decrement} disabled={paused}>
@@ -18,7 +22,7 @@ function Controls({ increment, decrement, like, paused, togglePaused }) {
           ❤️
         </span>
       </button>
-      <button onClick={togglePaused}>
+      <button onClick={toggle}>
         <span role="img" aria-label={paused ? "play" : "pause"}>
           {paused ? "▶️" : "⏸"}
         </span>

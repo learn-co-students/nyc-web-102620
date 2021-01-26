@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CommentForm from "./CommentForm";
 import CommentList from "./CommentList";
 
-function Comments({ paused }) {
+function Comments() {
   const [comments, setComments] = useState([]);
 
   function addComment(comment) {
@@ -20,7 +20,7 @@ function Comments({ paused }) {
   return (
     <div>
       <CommentList comments={comments} deleteComment={deleteComment} />
-      <CommentForm addComment={addComment} paused={paused} />
+      <CommentForm addComment={addComment} />
     </div>
   );
 }

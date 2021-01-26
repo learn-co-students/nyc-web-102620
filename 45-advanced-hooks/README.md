@@ -1,5 +1,15 @@
 # Advanced Hooks
 
+## Outline
+
+- [ ] `useRef` with DOM elements
+- [ ] `useRef` to persist data
+- [ ] `useContext`:
+  - The Context API
+  - Creating context
+  - Content Provider
+  - Using `useContext`
+
 ## useRef Hook
 
 ### Accessing DOM Elements
