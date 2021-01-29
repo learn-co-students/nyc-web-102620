@@ -1,7 +1,10 @@
 import React from "react";
-import Wallet from "./Wallet";
+import { useSelector } from "react-redux";
+import ATM from "./ATM";
 
 function Table({ plates = [] }) {
+  const funds = useSelector((state) => state.user.funds);
+
   // renders an empty plate for every element in the array
   const emptyPlates = plates.map((_, index) => (
     <div className="empty-plate" style={{ top: -7 * index }} />
@@ -10,8 +13,8 @@ function Table({ plates = [] }) {
   return (
     <>
       <div className="remaining">
-        <h1>You have: ${100} remaining!</h1>
-        <Wallet />
+        <h1>You have: ${funds} remaining!</h1>
+        <ATM />
       </div>
       <div className="table">
         <div className="stack">{emptyPlates}</div>

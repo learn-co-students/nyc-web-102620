@@ -1,11 +1,16 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addMoney } from "../redux/user";
 
-function Wallet() {
+function ATM() {
+  const dispatch = useDispatch();
   const [money, setMoney] = useState(0);
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(money);
+    // { type: "user/addMoney", payload: money }
+    const action = addMoney(money);
+    dispatch(action);
     setMoney(0);
   }
 
@@ -23,4 +28,4 @@ function Wallet() {
   );
 }
 
-export default Wallet;
+export default ATM;

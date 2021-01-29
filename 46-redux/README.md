@@ -7,16 +7,32 @@
 - [ ] Give components access to the Redux store with `useSelector`
 - [ ] Let components update the Redux store with `useDispatch`
 
+```js
+state = {
+  sushis: {
+    items: [],
+    currentIndex: 0,
+  },
+  user: {
+    funds: 100,
+  },
+};
+```
+
 ## Libraries
 
 ### Redux
 
 - `store`: Single Source of Truth (where state lives)
-- `getState()`: read the current state from the store
-- `dispatch(action)`: called when we need to update state
-- `subscribe(listener)`: called when we want to listen for updates to state
+  - `getState()`: read the current state from the store
+  - `subscribe(listener)`: called when we want to listen for updates to state
+- `dispatch({ type: "addItem" })`: called when we need to update state
 - reducer: a pure function that takes state + an action and returns a new state
-- action: an object describing how we want to change state
+- action: an object describing how we want to change state ({ type: "addItem", payload: newItem })
+
+```js
+store = createStore(reducer);
+```
 
 ### Redux Toolkit
 
