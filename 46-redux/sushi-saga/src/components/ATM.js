@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { addMoney } from "../redux/user";
 
 function ATM() {
+  // access Redux store dispatch with useDispatch
   const dispatch = useDispatch();
   const [money, setMoney] = useState(0);
 

@@ -2,12 +2,16 @@ import React from "react";
 import { useSelector } from "react-redux";
 import ATM from "./ATM";
 
-function Table({ plates = [] }) {
+function Table() {
+  // access Redux store state with useSelector
   const funds = useSelector((state) => state.user.funds);
+  const plates = useSelector((state) =>
+    state.sushis.items.filter((sushi) => sushi.isEaten)
+  );
 
   // renders an empty plate for every element in the array
   const emptyPlates = plates.map((_, index) => (
-    <div className="empty-plate" style={{ top: -7 * index }} />
+    <div key={index} className="empty-plate" style={{ top: -7 * index }} />
   ));
 
   return (
